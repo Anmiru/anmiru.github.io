@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnMi — Player</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Zen+Kaku+Gothic+New:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/video.js/8.10.0/video-js.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/video.js/8.10.0/video.min.js"></script>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/player.css">
+
+    <style>
+    /* Botão ⚙️ */
+    .vjs-settings-button { cursor: pointer; }
+    .vjs-settings-button .vjs-icon-placeholder::before {
+        content: "⚙"; font-size: 1.15rem; line-height: 1;
+        font-family: sans-serif; font-style: normal;
+    }
+    .vjs-playback-rate { display: none !important; }
+
+    /* Tempo customizado */
+    .vjs-time-display-custom {
+        display: flex; align-items: center;
+        color: rgba(255,255,255,0.75); font-size: 0.78rem;
+        font-family: 'Zen Kaku Gothic New', sans-serif;
+        letter-spacing: 0.04em; white-space: nowrap; padding: 0 0.5rem;
+    }
+    .vjs-time-display-custom .t-cur { color:#fff; font-weight:700; }
+    .vjs-time-display-custom .t-sep { margin:0 0.3rem; opacity:0.45; }
+    .vjs-time-display-custom .t-dur { opacity:0.6; }
+
+    /* Painel ⚙️ */
+    #sp {
+        display: none; position: absolute;
+        bottom: 3.8rem; right: 0.5rem; width: 270px;
+        background: rgba(10,2,20,0.97);
+        border: 1px solid rgba(232,121,160,0.22);
+        border-radius: 12px; overflow: hidden;
+        box-shadow: 0 8px 36px rgba(0,0,0,0.75);
+        font-family: 'Zen Kaku Gothic New', sans-serif; z-index: 9999;
+    }
+    #sp.open { display: block; }
+    .sp-main.hidden { display: none; }
+    .sp-sub { display: none; }
+    .sp-sub.visible { display: block; }
+    .sp-sub-header {
+        display: flex; align-items: center; gap: 0.5rem;
+        padding: 0.75rem 1rem; border-bottom: 1px solid rgba(255,255,255,0.08);
+        cursor: pointer; color: rgba(255,255,255,0.6);
+        font-size: 0.82rem; font-weight: 700; letter-spacing: 0.06em;
+        transition: color 0.15s;
+    }
+    .sp-sub-header:hover { color: #fff; }
+    .sp-sub-header svg { width: 16px; height: 16px; flex-shrink: 0; }
+    .sp-row {
+        display: flex; align-items: center; justify-content: space-between;
+        padding: 0.72rem 1rem; cursor: pointer;
+        border-bottom: 1px solid rgba(255,255,255,0.06);
+        transition: background 0.14s; gap: 0.5rem;
+    }
+    .sp-row:last-child { border-bottom: none; }
+    .sp-row:hover { background: rgba(232,121,160,0.1); }
+    .sp-row-left { display: flex; flex-direction: column; gap: 0.15rem; }
+    .sp-row-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; color: rgba(255,255,255,0.38); text-transform: uppercase; }
+    .sp-row-value { font-size: 0.9rem; color: rgba(255,255,255,0.9); }
+    .sp-row-arrow { color: rgba(255,255,255,0.35); font-size: 1.1rem; flex-shrink: 0; }
+    .sp-option {
+        display: flex; align-items: center; gap: 0.7rem;
+        padding: 0.55rem 1rem; cursor: pointer; font-size: 0.88rem;
+        color: rgba(255,255,255,0.82); transition: background 0.14s;
+    }
+    .sp-option:hover { background: rgba(232,121,160,0.1); color: #fff; }
+    .sp-option.active { color: #e879a0; font-weight: 700; }
+    .sp-check { width: 16px; flex-shrink: 0; text-align: center; font-size: 0.82rem; color: #e879a0; }
+    .sp-option:not(.active) .sp-check { visibility: hidden; }
+    .sp-style-group { display: flex; flex-wrap: wrap; gap: 0.45rem; padding: 0.5rem 1rem 0.75rem; }
+    .sp-style-btn {
+        padding: 0.28rem 0.65rem; border-radius: 6px; font-size: 0.8rem;
+        cursor: pointer; border: 1px solid rgba(255,255,255,0.15);
+        background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.75);
+        transition: all 0.15s; white-space: nowrap;
+    }
+    .sp-style-btn:hover { background: rgba(232,121,160,0.18); border-color: rgba(232,121,160,0.4); color: #fff; }
+    .sp-style-btn.active { background: rgba(194,24,91,0.35); border-color: #e879a0; color: #e879a0; font-weight: 700; }
+    .sp-style-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; color: rgba(255,255,255,0.3); text-transform: uppercase; padding: 0.6rem 1rem 0.2rem; }
+    </style>
+</head>
+<body class="player-body">
+
+    <div class="bg-solid"></div>
+    <div class="bg-pattern"></div>
+    <div class="bg-blur-cover" id="bgBlur"></div>
+
+    <header class="player-header">
+        <a href="#" id="backToAnime" class="back-btn">
+            <span class="back-arrow">‹</span>
+            <span id="backLabel">Voltar</span>
+        </a>
+        <div class="header-center">
+            <span class="header-anime-title" id="headerAnimeTitle"></span>
+            <span class="header-ep-label" id="headerEpLabel"></span>
+        </div>
+        <div class="header-deco">アニメ</div>
+    </header>
+
+    <main class="player-main">
+        <div class="player-wrapper">
+
+            <video id="anmi-player"
+                class="video-js vjs-anmi-theme vjs-big-play-centered"
+                controls preload="auto" playsinline>
+                <p class="vjs-no-js">Habilite o JavaScript para assistir.</p>
+            </video>
+
+            <!-- Legenda customizada -->
+            <div id="anmi-sub-display"></div>
+
+            <!-- Painel ⚙️ -->
+            <div id="sp">
+                <div class="sp-main" id="sp-main">
+                    <div class="sp-row" id="sp-row-quality">
+                        <div class="sp-row-left">
+                            <span class="sp-row-label">Resolução</span>
+                            <span class="sp-row-value" id="sp-quality-current">—</span>
+                        </div>
+                        <span class="sp-row-arrow">›</span>
+                    </div>
+                    <div class="sp-row" id="sp-row-subs">
+                        <div class="sp-row-left">
+                            <span class="sp-row-label">Legenda</span>
+                            <span class="sp-row-value" id="sp-subs-current">Desativado</span>
+                        </div>
+                        <span class="sp-row-arrow">›</span>
+                    </div>
+                    <div class="sp-row" id="sp-row-substyle">
+                        <div class="sp-row-left">
+                            <span class="sp-row-label">Estilo da Legenda</span>
+                            <span class="sp-row-value">Personalizar</span>
+                        </div>
+                        <span class="sp-row-arrow">›</span>
+                    </div>
+                </div>
+
+                <div class="sp-sub" id="sp-sub-quality">
+                    <div class="sp-sub-header" id="sp-back-quality">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+                        Resolução
+                    </div>
+                    <div id="sp-quality-list"></div>
+                </div>
+
+                <div class="sp-sub" id="sp-sub-subs">
+                    <div class="sp-sub-header" id="sp-back-subs">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+                        Legenda
+                    </div>
+                    <div id="sp-subs-list"></div>
+                </div>
+
+                <div class="sp-sub" id="sp-sub-substyle">
+                    <div class="sp-sub-header" id="sp-back-substyle">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+                        Estilo da Legenda
+                    </div>
+                    <div class="sp-style-label">Tamanho</div>
+                    <div class="sp-style-group" id="ss-size">
+                        <div class="sp-style-btn" data-val="0.85rem">Pequeno</div>
+                        <div class="sp-style-btn active" data-val="1.05rem">Médio</div>
+                        <div class="sp-style-btn" data-val="1.35rem">Grande</div>
+                        <div class="sp-style-btn" data-val="1.7rem">Enorme</div>
+                    </div>
+                    <div class="sp-style-label">Cor do texto</div>
+                    <div class="sp-style-group" id="ss-color">
+                        <div class="sp-style-btn active" data-val="#ffffff" style="color:#fff">Branco</div>
+                        <div class="sp-style-btn" data-val="#ff70a2" style="color:#ff70a2">Rosa</div>
+                        <div class="sp-style-btn" data-val="#fffb00" style="color:#fffb00">Amarelo</div>
+                        <div class="sp-style-btn" data-val="#00ff48" style="color:#00ff48">Verde</div>
+                    </div>
+                    <div class="sp-style-label">Fundo</div>
+                    <div class="sp-style-group" id="ss-bg">
+                        <div class="sp-style-btn active" data-val="rgba(0,0,0,0.82)">Escuro</div>
+                        <div class="sp-style-btn" data-val="rgba(0,0,0,0.4)">Leve</div>
+                        <div class="sp-style-btn" data-val="transparent">Sem fundo</div>
+                    </div>
+                    <div class="sp-style-label">Borda do texto</div>
+                    <div class="sp-style-group" id="ss-outline">
+                        <div class="sp-style-btn active" data-val="none">Nenhuma</div>
+                        <div class="sp-style-btn" data-val="outline">Contorno</div>
+                        <div class="sp-style-btn" data-val="glow">Brilho</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="no-source-overlay" id="noSourceOverlay" style="display:none;">
+                <div class="no-source-icon">✿</div>
+                <p class="no-source-text">Episódio ainda não disponível.</p>
+                <p class="no-source-sub">Volte em breve!</p>
+            </div>
+
+        </div><!-- .player-wrapper -->
+
+        <div class="episode-info-bar">
+            <div class="ep-meta">
+                <span class="ep-number-label" id="epNumberLabel"></span>
+                <span class="ep-name-label" id="epNameLabel"></span>
+            </div>
+            <div class="ep-nav-btns">
+                <a href="#" id="prevEpBtn" class="ep-nav-btn" style="visibility:hidden;">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+                    Anterior
+                </a>
+                <a href="#" id="nextEpBtn" class="ep-nav-btn" style="visibility:hidden;">
+                    Próximo
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 6 8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+                </a>
+            </div>
+        </div>
+
+        <div class="player-episodes-panel">
+            <div class="panel-header">
+                <span class="panel-title">Episódios</span>
+                <span class="panel-count" id="panelCount"></span>
+            </div>
+            <div class="panel-list" id="panelList"></div>
+        </div>
+    </main>
+
+    <script src="js/script.js"></script>
+    <script>
+    // ═══════════════════════════════════════════════
+    //  ESTADO GLOBAL
+    // ═══════════════════════════════════════════════
+    const params  = new URLSearchParams(window.location.search);
+    const animeId = params.get('anime') || '';
+    const epNum   = parseInt(params.get('ep')) || 1;
+
+    let player;
+    let animeData   = null;
+    let i18nData    = null;
+    let epQualities = [];
+    let epSubtitles = [];
+    let activeQIdx  = 0;
+
+    // Estado do renderer de legendas
+    const sub = {
+        cues:   [],
+        active: false,
+        style:  { size: '1.1rem', color: '#ffffff', bg: 'rgba(0,0,0,0.82)', outline: 'none' }
+    };
+    const subEl = document.getElementById('anmi-sub-display');
+
+    // ═══════════════════════════════════════════════
+    //  CARREGAMENTO
+    // ═══════════════════════════════════════════════
+    // Fetch: animes.json → episodes.json — tryRender chamado após cada etapa
+    let episodesData = null;
+    fetch('data/animes.json')
+        .then(r => r.json())
+        .then(index => {
+            animeData = index[animeId] || null;
+            if (!animeData || !animeData.episodesFile) { tryRender(); return; }
+            return fetch(animeData.episodesFile)
+                .then(r => r.json())
+                .then(epData => { episodesData = epData; tryRender(); })
+                .catch(() => { episodesData = {}; tryRender(); });
+        })
+        .catch(() => { animeData = {}; tryRender(); });
+
+    document.addEventListener('translationsLoaded', e => { i18nData = e.detail; tryRender(); });
+
+    function tryRender() {
+        if (!i18nData || !animeData) return;
+        if (animeData.episodesFile && !episodesData) return; // aguarda episodes.json
+
+        const t = i18nData;
+        // Episódios do episodes.json (seasons flatten) ou fallback
+        const seasons  = episodesData ? (episodesData.seasons || []) : [];
+        const episodes = seasons.length
+            ? seasons.flatMap(s => s.episodes || [])
+            : (animeData.episodes || []);
+        const ep         = episodes.find(e => e.num === epNum);
+        const cover      = t[`aninfo-cover-${animeId}`] || animeData.cover || '';
+        const animeTitle = t[`aninfo-title-${animeId}`] || animeId;
+        const totalEps   = episodes.length;
+
+        document.title = `Ep. ${epNum} — ${animeTitle} | AnMi`;
+        document.getElementById('headerAnimeTitle').textContent = animeTitle;
+        document.getElementById('headerEpLabel').textContent    = `Episódio ${epNum}`;
+        document.getElementById('epNumberLabel').textContent    = `Episódio ${epNum}`;
+        document.getElementById('panelCount').textContent       = `${totalEps} ep.`;
+        if (ep?.title) document.getElementById('epNameLabel').textContent = ep.title;
+        if (cover)     document.getElementById('bgBlur').style.backgroundImage = `url('${cover}')`;
+        document.getElementById('backToAnime').href      = `aninfo.html?anime=${animeId}`;
+        document.getElementById('backLabel').textContent = animeTitle;
+
+        epQualities = ep?.qualities || [];
+        epSubtitles = ep?.subtitles || [];
+
+        // ── Video.js ──────────────────────────────────────────────────────
+        player = videojs('anmi-player', {
+            fill: true,
+            controlBar: {
+                children: [
+                    'playToggle',
+                    'skipBackward',
+                    'skipForward',
+                    'volumePanel',
+                    'progressControl',
+                    'fullscreenToggle',
+                ]
+            }
+        });
+
+        const firstSrc = epQualities[0];
+        if (firstSrc?.src) {
+            document.getElementById('noSourceOverlay').style.display = 'none';
+            player.src({ src: firstSrc.src, type: 'video/mp4' });
+            player.ready(() => {
+                buildTimeDisplay();
+                buildSettingsBtn();
+            });
+            // Atualiza legenda no timeupdate
+            player.on('timeupdate', updateSubDisplay);
+
+            // Move legenda quando controles aparecem/somem
+            player.on('useractive',   () => subEl.classList.replace('sub-bottom', 'sub-above-bar') || subEl.classList.add('sub-above-bar'));
+            player.on('userinactive', () => subEl.classList.replace('sub-above-bar', 'sub-bottom') || subEl.classList.add('sub-bottom'));
+            // Estado inicial
+            subEl.classList.add('sub-above-bar');
+        } else {
+            document.getElementById('anmi-player').style.display = 'none';
+            document.getElementById('noSourceOverlay').style.display = 'flex';
+        }
+
+        // ── Legenda padrão ────────────────────────────────────────────────
+        const defSub = epSubtitles.find(s => s.default);
+        if (defSub) loadVTT(defSub.src);
+
+        // ── Prev / Next ───────────────────────────────────────────────────
+        if (epNum > 1) {
+            const p = document.getElementById('prevEpBtn');
+            p.href = `player.html?anime=${animeId}&ep=${epNum - 1}`;
+            p.style.visibility = 'visible';
+        }
+        if (epNum < totalEps) {
+            const n = document.getElementById('nextEpBtn');
+            n.href = `player.html?anime=${animeId}&ep=${epNum + 1}`;
+            n.style.visibility = 'visible';
+        }
+
+        // ── Lista de episódios ────────────────────────────────────────────
+        const list = document.getElementById('panelList');
+        episodes.forEach(e => {
+            const item = document.createElement('a');
+            item.className = 'panel-ep-item' + (e.num === epNum ? ' active' : '');
+            item.href = `player.html?anime=${animeId}&ep=${e.num}`;
+            item.innerHTML = `
+                <span class="panel-ep-num">${e.num}</span>
+                <span class="panel-ep-text">
+                    <span class="panel-ep-ep">Episódio ${e.num}</span>
+                    ${e.title ? `<span class="panel-ep-name">${e.title}</span>` : ''}
+                </span>
+                ${e.num === epNum ? '<span class="panel-ep-playing">▶</span>' : ''}
+            `;
+            list.appendChild(item);
+        });
+        const activeItem = list.querySelector('.active');
+        if (activeItem) setTimeout(() => activeItem.scrollIntoView({ block: 'nearest' }), 100);
+    }
+
+    // ═══════════════════════════════════════════════
+    //  RENDERER VTT CUSTOMIZADO
+    //  Faz fetch do .vtt, parseia e exibe como div HTML.
+    //  Controle total de estilo — sem shadow DOM, sem restrições.
+    // ═══════════════════════════════════════════════
+
+    function vttTimeToSec(str) {
+        const p = str.trim().split(':').map(parseFloat);
+        return p.length === 3 ? p[0]*3600 + p[1]*60 + p[2] : p[0]*60 + p[1];
+    }
+
+    function parseVTT(raw) {
+        const cues = [];
+        const blocks = raw.replace(/\r/g, '').split(/\n{2,}/);
+        for (const block of blocks) {
+            const lines = block.trim().split('\n');
+            const ti = lines.findIndex(l => l.includes('-->'));
+            if (ti === -1) continue;
+            const parts = lines[ti].split('-->');
+            const text  = lines.slice(ti + 1).join('\n').replace(/<[^>]+>/g, '').trim();
+            if (!text) continue;
+            cues.push({ start: vttTimeToSec(parts[0]), end: vttTimeToSec(parts[1]), text });
+        }
+        return cues;
+    }
+
+    function loadVTT(src) {
+        sub.cues   = [];
+        sub.active = false;
+        subEl.classList.remove('sub-visible');
+        if (!src) return;
+        fetch(src)
+            .then(r => { if (!r.ok) throw new Error(r.status); return r.text(); })
+            .then(raw => {
+                sub.cues   = parseVTT(raw);
+                sub.active = true;
+                applySubStyle();
+            })
+            .catch(e => console.warn('VTT:', e));
+    }
+
+    function updateSubDisplay() {
+        if (!sub.active || !sub.cues.length) {
+            subEl.classList.remove('sub-visible');
+            return;
+        }
+        const t   = player.currentTime();
+        const cue = sub.cues.find(c => t >= c.start && t < c.end);
+        if (cue) {
+            if (subEl.dataset.key !== cue.text) {
+                subEl.dataset.key = cue.text;
+                subEl.innerHTML   = cue.text.replace(/\n/g, '<br>');
+            }
+            subEl.classList.add('sub-visible');
+        } else {
+            subEl.classList.remove('sub-visible');
+            subEl.dataset.key = '';
+        }
+    }
+
+    function applySubStyle() {
+        const s = sub.style;
+        // text-shadow: 'outline' usa sombras em 4 direções para simular borda
+        let shadow = 'none';
+        if (s.outline === 'outline') {
+            shadow = '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000';
+        } else if (s.outline === 'glow') {
+            shadow = '0 0 6px #000, 0 0 12px #000, 0 0 2px #000';
+        } else if (s.bg === 'transparent') {
+            // sem fundo e sem borda: sombra sutil para legibilidade
+            shadow = '0 1px 4px #000, 0 0 2px #000';
+        }
+        subEl.style.fontSize   = s.size;
+        subEl.style.color      = s.color;
+        subEl.style.background = s.bg;
+        subEl.style.textShadow = shadow;
+        subEl.style.webkitTextStroke = s.outline === 'outline' ? '0' : '0';
+    }
+
+    // ═══════════════════════════════════════════════
+    //  DISPLAY DE TEMPO
+    // ═══════════════════════════════════════════════
+    function buildTimeDisplay() {
+        function fmt(s) {
+            if (!s || isNaN(s)) return '00:00';
+            const h = Math.floor(s / 3600), m = Math.floor((s % 3600) / 60), sec = Math.floor(s % 60);
+            return h > 0
+                ? `${h}:${String(m).padStart(2,'0')}:${String(sec).padStart(2,'0')}`
+                : `${String(m).padStart(2,'0')}:${String(sec).padStart(2,'0')}`;
+        }
+        class TimeDisplay extends videojs.getComponent('Component') {
+            constructor(p, o) {
+                super(p, o);
+                this.addClass('vjs-time-display-custom');
+                this.el().innerHTML = `<span class="t-cur">00:00</span><span class="t-sep">/</span><span class="t-dur">00:00</span>`;
+            }
+            createEl() { return videojs.dom.createEl('div'); }
+        }
+        videojs.registerComponent('TimeDisplay', TimeDisplay);
+        const cb    = player.controlBar;
+        const fsIdx = cb.children().findIndex(c => c.name?.() === 'FullscreenToggle');
+        const td    = cb.addChild('TimeDisplay', {}, fsIdx >= 0 ? fsIdx : cb.children().length - 1);
+        const curEl = td.el().querySelector('.t-cur');
+        const durEl = td.el().querySelector('.t-dur');
+        player.on('timeupdate',    () => { curEl.textContent = fmt(player.currentTime()); });
+        player.on('durationchange',() => { durEl.textContent = fmt(player.duration()); });
+        player.on('loadedmetadata',() => { durEl.textContent = fmt(player.duration()); });
+    }
+
+    // ═══════════════════════════════════════════════
+    //  BOTÃO ⚙️ + PAINEL
+    // ═══════════════════════════════════════════════
+    function buildSettingsBtn() {
+        const panel = document.getElementById('sp');
+
+        class SettingsButton extends videojs.getComponent('Button') {
+            constructor(p, o) { super(p, o); this.addClass('vjs-settings-button'); this.controlText('Configurações'); }
+            handleClick(e) { e.stopPropagation(); togglePanel(); }
+        }
+        videojs.registerComponent('SettingsButton', SettingsButton);
+        const cb    = player.controlBar;
+        const fsIdx = cb.children().findIndex(c => c.name?.() === 'FullscreenToggle');
+        cb.addChild('SettingsButton', {}, fsIdx >= 0 ? fsIdx : cb.children().length - 1);
+
+        document.addEventListener('click', e => {
+            if (!panel.contains(e.target) && !e.target.closest('.vjs-settings-button')) closePanel();
+        });
+
+        const showMain    = () => { document.getElementById('sp-main').classList.remove('hidden'); document.querySelectorAll('.sp-sub').forEach(s => s.classList.remove('visible')); };
+        const showSub     = id => { document.getElementById('sp-main').classList.add('hidden'); document.getElementById(id).classList.add('visible'); };
+        const togglePanel = () => { panel.classList.toggle('open'); if (panel.classList.contains('open')) showMain(); };
+        const closePanel  = () => panel.classList.remove('open');
+
+        document.getElementById('sp-back-quality').addEventListener('click',  showMain);
+        document.getElementById('sp-back-subs').addEventListener('click',     showMain);
+        document.getElementById('sp-back-substyle').addEventListener('click', showMain);
+        document.getElementById('sp-row-quality').addEventListener('click',   () => showSub('sp-sub-quality'));
+        document.getElementById('sp-row-subs').addEventListener('click',      () => showSub('sp-sub-subs'));
+        document.getElementById('sp-row-substyle').addEventListener('click',  () => showSub('sp-sub-substyle'));
+
+        // Resolução
+        const qList = document.getElementById('sp-quality-list');
+        const qCurr = document.getElementById('sp-quality-current');
+        epQualities.forEach((q, i) => {
+            const opt = document.createElement('div');
+            opt.className = 'sp-option' + (i === 0 ? ' active' : '');
+            opt.innerHTML = `<span class="sp-check">✓</span>${q.label}`;
+            opt.addEventListener('click', () => {
+                if (activeQIdx === i) { closePanel(); return; }
+                const t = player.currentTime(), pa = player.paused();
+                activeQIdx = i;
+                player.src({ src: q.src, type: 'video/mp4' });
+                player.one('loadedmetadata', () => { player.currentTime(t); if (!pa) player.play(); });
+                qList.querySelectorAll('.sp-option').forEach((el, j) => el.classList.toggle('active', j === i));
+                qCurr.textContent = q.label;
+                closePanel();
+            });
+            qList.appendChild(opt);
+        });
+        if (epQualities[0]) qCurr.textContent = epQualities[0].label;
+
+        // Legenda
+        const sList = document.getElementById('sp-subs-list');
+        const sCurr = document.getElementById('sp-subs-current');
+        const makeSubOpt = (label, src, isActive) => {
+            const opt = document.createElement('div');
+            opt.className = 'sp-option' + (isActive ? ' active' : '');
+            opt.innerHTML = `<span class="sp-check">✓</span>${label}`;
+            opt.addEventListener('click', () => {
+                loadVTT(src);   // loadVTT(null) limpa, loadVTT(src) carrega
+                sList.querySelectorAll('.sp-option').forEach(el => el.classList.remove('active'));
+                opt.classList.add('active');
+                sCurr.textContent = label;
+                closePanel();
+            });
+            return opt;
+        };
+        const hasDef = epSubtitles.some(s => s.default);
+        sList.appendChild(makeSubOpt('Desativado', null, !hasDef));
+        epSubtitles.forEach(s => {
+            sList.appendChild(makeSubOpt(s.label, s.src, s.default || false));
+            if (s.default) sCurr.textContent = s.label;
+        });
+
+        // Estilo da legenda
+        const bindStyle = (groupId, prop) => {
+            document.querySelectorAll(`#${groupId} .sp-style-btn`).forEach(btn => {
+                btn.addEventListener('click', () => {
+                    document.querySelectorAll(`#${groupId} .sp-style-btn`).forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    sub.style[prop] = btn.dataset.val;
+                    applySubStyle();
+                });
+            });
+        };
+        bindStyle('ss-size',    'size');
+        bindStyle('ss-color',   'color');
+        bindStyle('ss-bg',      'bg');
+        bindStyle('ss-outline', 'outline');
+    }
+    </script>
+</body>
+</html>

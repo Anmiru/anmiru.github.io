@@ -1,0 +1,15 @@
+{
+  "animeIds": [
+    "mizu"
+  ],
+  "spotlight": [
+    {
+      "id": "mizu",
+      "active": true
+    }
+  ],
+  "spotBg": {
+    "mizu": "img/mizu_bg.jpg"
+  },
+  "videoBase": "video/"
+}

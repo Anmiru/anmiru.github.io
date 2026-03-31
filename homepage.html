@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="homepage-title">AnMi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Zen+Kaku+Gothic+New:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/homepage.css">
+</head>
+<body class="home-body">
+
+    <div class="bg-grid"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="particles-container" id="particles"></div>
+
+    <!-- Palavras flutuantes -->
+    <div class="floating-words" id="floatingWords"></div>
+
+    <div class="lang-menu-wrap" id="langMenuWrap">
+        <button class="lang-globe-btn" id="langGlobeBtn" aria-label="Idioma">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M2 12h20"/>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+            </svg>
+        </button>
+        <div class="lang-dropdown" id="langDropdown">
+            <div class="lang-option" id="btn-pt">
+                <span class="lang-flag">🇧🇷</span> Português
+            </div>
+            <div class="lang-option" id="btn-en">
+                <span class="lang-flag">🇺🇸</span> English
+            </div>
+        </div>
+    </div>
+
+    <main class="hero-content">
+        <div class="logo-wrapper">
+            <div class="logo-glow"></div>
+            <a href="home.html" class="site-title-link">
+                <h1 class="site-title">
+                    <span class="title-an">An</span><span class="title-mi">Mi</span>
+                </h1>
+            </a>
+        </div>
+    </main>
+
+    <div class="corner-deco top-left">アニメ</div>
+    <div class="corner-deco bottom-right">見る</div>
+
+    <script src="js/script.js"></script>
+    <script>
+        // === PARTÍCULAS ===
+        const container = document.getElementById('particles');
+        function createParticle() {
+            const p = document.createElement('div');
+            p.classList.add('particle');
+            const size = 1 + Math.random() * 2;
+            p.style.left = Math.random() * 100 + 'vw';
+            p.style.bottom = '-10px';
+            p.style.width = size + 'px';
+            p.style.height = size + 'px';
+            p.style.opacity = 0.2 + Math.random() * 0.5;
+            p.style.animationDuration = (8 + Math.random() * 12) + 's';
+            p.style.animationDelay = (Math.random() * 3) + 's';
+            container.appendChild(p);
+            setTimeout(() => p.remove(), 20000);
+        }
+        setInterval(createParticle, 600);
+        for (let i = 0; i < 15; i++) setTimeout(createParticle, i * 200);
+
+        // === MENU GLOBO ===
+        const globeBtn = document.getElementById('langGlobeBtn');
+        const dropdown = document.getElementById('langDropdown');
+        const wrap     = document.getElementById('langMenuWrap');
+        globeBtn.addEventListener('click', (e) => { e.stopPropagation(); wrap.classList.toggle('open'); });
+        document.addEventListener('click', () => wrap.classList.remove('open'));
+        dropdown.addEventListener('click', (e) => e.stopPropagation());
+
+        // === PALAVRAS FLUTUANTES COM EFEITO DE DIGITAÇÃO ===
+        const phrases = [
+            // curtas (ficam em qualquer lugar)
+            '720p',
+            'anime',
+            '見る',
+            '1080P',
+            'SUB',
+            'DUB',
+            'アニメ',
+            'LEG',
+            'ONLINE',
+            'grátis',
+            // médias
+            'legendas de qualidade',
+            'player moderno',
+            'rápido e leve',
+            'modo escuro',
+            'vários idiomas',
+            'sem travamentos',
+            'assista quando quiser',
+            'catálogo crescendo',
+            'comunidade anime',
+            'novos episódios',
+            // longas
+            'assistir animes online é com AnMi',
+            'personalize as legendas conforme seu gosto',
+            'player moderno e rápido',
+            'assista animes em vários idiomas',
+            'a melhor experiência de anime',
+            'legendas sincronizadas com precisão',
+            'seu universo de animes em um só lugar',
+            'qualidade de imagem impecável',
+            'interface limpa e intuitiva',
+            'compatível com todos os dispositivos',
+        ];
+
+        const SAFE_ZONE = { top: 0.28, bottom: 0.72, left: 0.15, right: 0.85 };
+        const NUM_SLOTS = 10;
+        const floatingEl = document.getElementById('floatingWords');
+
+        // Gera posições espalhadas evitando o centro
+        function randomPos(index) {
+            let x, y;
+            let attempt = 0;
+            do {
+                x = 0.04 + Math.random() * 0.88;
+                y = 0.06 + Math.random() * 0.82;
+                attempt++;
+            } while (
+                attempt < 20 &&
+                x > SAFE_ZONE.left && x < SAFE_ZONE.right &&
+                y > SAFE_ZONE.top  && y < SAFE_ZONE.bottom
+            );
+            return { x, y };
+        }
+
+        // Opacidade e tamanho variados para profundidade
+        const STYLES = [
+            { size: '0.8rem',  opacity: 0.38, weight: 300 },
+            { size: '0.85rem', opacity: 0.44, weight: 300 },
+            { size: '0.9rem',  opacity: 0.50, weight: 400 },
+            { size: '0.95rem', opacity: 0.55, weight: 400 },
+            { size: '1rem',    opacity: 0.42, weight: 300 },
+            { size: '0.82rem', opacity: 0.40, weight: 300 },
+        ];
+
+        // Cria os slots persistentes
+        const slots = [];
+        const usedPhrases = new Set();
+
+        function pickPhrase() {
+            const available = phrases.filter(p => !usedPhrases.has(p));
+            const pool = available.length > 0 ? available : phrases;
+            const pick = pool[Math.floor(Math.random() * pool.length)];
+            usedPhrases.add(pick);
+            if (usedPhrases.size > phrases.length * 0.7) usedPhrases.clear();
+            return pick;
+        }
+
+        function createSlot(index) {
+            const pos   = randomPos(index);
+            const style = STYLES[Math.floor(Math.random() * STYLES.length)];
+
+            const el = document.createElement('div');
+            el.className = 'float-word';
+            el.style.left    = (pos.x * 100) + '%';
+            el.style.top     = (pos.y * 100) + '%';
+            el.style.fontSize   = style.size;
+            el.style.fontWeight = style.weight;
+
+            const textSpan   = document.createElement('span');
+            textSpan.className = 'fw-text';
+            const cursorSpan = document.createElement('span');
+            cursorSpan.className = 'fw-cursor';
+            cursorSpan.textContent = '|';
+
+            el.appendChild(textSpan);
+            el.appendChild(cursorSpan);
+            floatingEl.appendChild(el);
+
+            const slot = { el, textSpan, cursorSpan, style,
+                           phrase: '', charIdx: 0, deleting: false, timer: null, maxOpacity: style.opacity };
+            slots.push(slot);
+            startSlot(slot, Math.random() * 4000); // stagger inicial
+        }
+
+        function startSlot(slot, delay) {
+            clearTimeout(slot.timer);
+            slot.phrase   = pickPhrase();
+            slot.charIdx  = 0;
+            slot.deleting = false;
+            slot.textSpan.textContent = '';
+            slot.el.style.opacity = '0';
+            slot.cursorSpan.style.opacity = '1';
+
+            slot.timer = setTimeout(() => {
+                // fade in
+                slot.el.style.transition = 'opacity 0.6s ease';
+                slot.el.style.opacity = slot.maxOpacity;
+                typeSlot(slot);
+            }, delay);
+        }
+
+        function typeSlot(slot) {
+            const TYPE_SPD   = 45 + Math.random() * 25;
+            const DELETE_SPD = 25 + Math.random() * 15;
+            const PAUSE      = 2000 + Math.random() * 3000;
+            const PAUSE_NEXT = 600  + Math.random() * 1200;
+
+            if (!slot.deleting) {
+                slot.charIdx++;
+                slot.textSpan.textContent = slot.phrase.slice(0, slot.charIdx);
+                if (slot.charIdx >= slot.phrase.length) {
+                    slot.deleting = true;
+                    slot.timer = setTimeout(() => typeSlot(slot), PAUSE);
+                } else {
+                    slot.timer = setTimeout(() => typeSlot(slot), TYPE_SPD);
+                }
+            } else {
+                slot.charIdx--;
+                slot.textSpan.textContent = slot.phrase.slice(0, slot.charIdx);
+                if (slot.charIdx <= 0) {
+                    // fade out, reposiciona, recomeça
+                    slot.el.style.transition = 'opacity 0.5s ease';
+                    slot.el.style.opacity = '0';
+                    slot.timer = setTimeout(() => {
+                        // nova posição
+                        const pos = randomPos(0);
+                        slot.el.style.transition = 'none';
+                        slot.el.style.left = (pos.x * 100) + '%';
+                        slot.el.style.top  = (pos.y * 100) + '%';
+                        startSlot(slot, PAUSE_NEXT);
+                    }, 600);
+                } else {
+                    slot.timer = setTimeout(() => typeSlot(slot), DELETE_SPD);
+                }
+            }
+        }
+
+        // Inicializa slots após logo aparecer
+        setTimeout(() => {
+            for (let i = 0; i < NUM_SLOTS; i++) createSlot(i);
+        }, 800);
+    </script>
+</body>
+</html>
