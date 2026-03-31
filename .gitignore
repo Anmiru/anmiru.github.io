@@ -9,5 +9,3 @@ video/*.mkv
 video/*.avi
 video/**/*.mp4
 video/**/*.mkv
-
-subs/*.vtt
