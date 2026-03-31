@@ -1,0 +1,33 @@
+{
+  "animeId": "mizu",
+  "title": "Mizu Zokusei no Mahoutsukai",
+  "seasons": [
+    {
+      "num": 1,
+      "name": "Temporada 1",
+      "episodes": [
+        {
+          "num": 1,
+          "title": "",
+          "videoFile": "https://archive.org/download/mizu-zokusei-no-mahoutsukai-ep-1/Mizu%20Zokusei%20no%20Mahoutsukai%20-%20Ep1.mp4",
+          "jsonFile": "Mizu Zokusei no Mahoutsukai Ep1.json",
+          "qualities": [
+            {
+              "label": "1080p",
+              "src": "https://archive.org/download/mizu-zokusei-no-mahoutsukai-ep-1/Mizu%20Zokusei%20no%20Mahoutsukai%20-%20Ep1.mp4",
+              "type": "video/mp4"
+            }
+          ],
+          "subtitles": [
+            {
+              "label": "Português",
+              "lang": "pt-BR",
+              "src": "subs/Mizu Zokusei no Mahoutsukai/Ep1_pt.vtt",
+              "default": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
