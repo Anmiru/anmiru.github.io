@@ -1,0 +1,25 @@
+{
+  "genres": [
+    { "id": "fantasia",     "pt": "Fantasia",      "en": "Fantasy",       "css": "g-fantasia" },
+    { "id": "aventura",     "pt": "Aventura",       "en": "Adventure",     "css": "g-aventura" },
+    { "id": "acao",         "pt": "Ação",           "en": "Action",        "css": "g-acao"     },
+    { "id": "romance",      "pt": "Romance",        "en": "Romance",       "css": "g-romance"  },
+    { "id": "drama",        "pt": "Drama",          "en": "Drama",         "css": "g-drama"    },
+    { "id": "comedia",      "pt": "Comédia",        "en": "Comedy",        "css": "g-comedia"  },
+    { "id": "terror",       "pt": "Terror",         "en": "Horror",        "css": "g-terror"   },
+    { "id": "scifi",        "pt": "Sci-Fi",         "en": "Sci-Fi",        "css": "g-sci-fi"   },
+    { "id": "slice",        "pt": "Slice of Life",  "en": "Slice of Life", "css": "g-slice"    }
+  ],
+  "others": {
+    "pt": "Outros",
+    "en": "Others"
+  },
+  "season": {
+    "pt": "Temporada",
+    "en": "Season"
+  },
+  "episode": {
+    "pt": "Episódio",
+    "en": "Episode"
+  }
+}

@@ -1,15 +1,21 @@
 {
   "animeIds": [
-    "mizu"
+    "mizu_zokusei_no_mahoutsukai",
+    "ame_to_kimi_to"
   ],
   "spotlight": [
     {
-      "id": "mizu",
+      "id": "mizu_zokusei_no_mahoutsukai",
+      "active": true
+    },
+    {
+      "id": "ame_to_kimi_to",
       "active": true
     }
   ],
   "spotBg": {
-    "mizu": "img/mizu_bg.jpg"
+    "mizu_zokusei_no_mahoutsukai": "https://archive.org/download/mizu_zokusei_no_mahoutsukai_bg/mizu_zokusei_no_mahoutsukai_bg.jpg",
+    "ame_to_kimi_to": "https://archive.org/download/background_ame_to_kimi_to/background_ame_to_kimi_to.jpg"
   },
   "videoBase": "video/"
 }

@@ -1,7 +1,12 @@
 {
-  "mizu": {
-    "id": "mizu",
-    "cover": "img/mizu.png",
+  "mizu_zokusei_no_mahoutsukai": {
+    "id": "mizu_zokusei_no_mahoutsukai",
+    "cover": "img/mizu_zokusei_no_mahoutsukai.jpg",
     "episodesFile": "video/Mizu Zokusei no Mahoutsukai/episodes.json"
+  },
+  "ame_to_kimi_to": {
+    "id": "ame_to_kimi_to",
+    "cover": "img/ame_to_kimi_to.png",
+    "episodesFile": "video/Ame to Kimi to/episodes.json"
   }
 }

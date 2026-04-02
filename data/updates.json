@@ -1,0 +1,38 @@
+[
+  {
+    "id": "1775141015387",
+    "date": "2026-04-02",
+    "type": "news",
+    "title": "Interface geral do site",
+    "body": "O site apresenta uma interface redesenhada. Cores mais suaves e sutis foram adicionadas/alternadas. Rótulos mal posicionados foram corrigidos. Os cards de anime foram sincronizados para que todos tenham a mesma aparência.",
+    "link": "",
+    "linkLabel": "Ver mais"
+  },
+  {
+    "id": "1775140810676",
+    "date": "2026-04-02",
+    "type": "news",
+    "title": "Suporte parcial a legendas",
+    "body": "Atualmente, o reprodutor do AnMi não suporta múltiplas legendas. Suporte para legendas em vários idiomas será adicionado em breve.",
+    "link": "",
+    "linkLabel": "Ver mais"
+  },
+  {
+    "id": "1775140267003",
+    "date": "2026-04-02",
+    "type": "episode",
+    "title": "Todos os episódios já foram adicionados ao site!",
+    "body": "Todos os episódios de 'Mizu Zokusei no Mahoutsukai' foram adicionados, mas por enquanto estão disponíveis apenas com legendas em português brasileiro. Legendas em inglês serão adicionadas em breve.",
+    "link": "aninfo.html?anime=mizu_zokusei_no_mahoutsukai",
+    "linkLabel": "Ver mais"
+  },
+  {
+    "id": "1775140157488",
+    "date": "2026-04-02",
+    "type": "anime",
+    "title": "Novo anime adicionado!",
+    "body": "",
+    "link": "aninfo.html?anime=ame_to_kimi_to",
+    "linkLabel": "Ver mais"
+  }
+]
