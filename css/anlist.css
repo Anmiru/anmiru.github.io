@@ -1,1 +1,247 @@
-.anlist-layout{position:relative;z-index:5;display:flex;gap:0;max-width:1340px;margin:0 auto;padding:88px 2rem 5rem;min-height:100vh;align-items:flex-start}.anlist-main{flex:1;min-width:0}.anlist-header-row{display:flex;align-items:baseline;gap:.75rem;margin-bottom:2rem}.anlist-heading{font-family:'Cinzel Decorative',cursive;font-size:clamp(1.3rem, 3vw, 2rem);background:linear-gradient(135deg,#e0f7fa,#22d3ee);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}.anlist-count{font-size:.78rem;color:var(--muted);font-weight:400}.anime-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(168px,1fr));gap:1.4rem}.anime-card{cursor:pointer;animation:cardPop .5s cubic-bezier(.22,1,.36,1) both;transition:transform .3s cubic-bezier(.22,1,.36,1)}@keyframes cardPop{from{opacity:0;transform:translateY(16px) scale(.97)}to{opacity:1;transform:none}}.anime-card:hover{transform:translateY(-6px)}.card-img-wrap{position:relative;aspect-ratio:2/3;border-radius:12px;overflow:hidden;border:1px solid rgba(34,211,238,.15);box-shadow:0 6px 24px rgba(0,0,0,.45);transition:box-shadow .3s,border-color .3s}.anime-card:hover .card-img-wrap{box-shadow:0 14px 40px rgba(0,0,0,.65),0 0 20px rgba(34,211,238,.12);border-color:rgba(34,211,238,.38)}.card-img-wrap img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s cubic-bezier(.22,1,.36,1)}.anime-card:hover .card-img-wrap img{transform:scale(1.06)}.card-shine{position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.07) 0,transparent 55%);pointer-events:none}.card-rating{position:absolute;top:.5rem;right:.5rem;font-size:.72rem;font-weight:700;color:#fbbf24;background:rgba(6,13,26,.82);border:1px solid rgba(251,191,36,.3);border-radius:8px;padding:.15rem .45rem;backdrop-filter:blur(4px)}.card-hover-play{position:absolute;inset:0;background:rgba(6,13,26,.5);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .25s}.card-hover-play svg{width:42px;height:42px;color:#fff;filter:drop-shadow(0 0 14px rgba(34,211,238,.6));transform:scale(.85);transition:transform .25s}.anime-card:hover .card-hover-play{opacity:1}.anime-card:hover .card-hover-play svg{transform:scale(1)}.card-info{padding:.65rem .1rem 0;display:flex;flex-direction:column;gap:5px}.card-title{font-size:.88rem;font-weight:700;color:rgba(255,255,255,.92);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.card-genres{display:flex;flex-wrap:wrap;gap:3px}.card-genre-chip{font-size:.64rem;font-weight:700;letter-spacing:.03em;padding:.12rem .45rem;border-radius:20px}.anlist-empty{display:flex;flex-direction:column;align-items:center;gap:.6rem;padding:4rem 0;color:var(--muted);text-align:center}.anlist-empty .empty-icon{font-size:2.5rem}.anlist-empty p{font-size:.9rem}.anlist-sidebar{width:220px;flex-shrink:0;margin-left:2rem;position:sticky;top:76px;display:flex;flex-direction:column;gap:0}.sidebar-block{background:rgba(13,26,46,.6);border:1px solid rgba(103,232,249,.1);border-radius:14px;padding:1rem 1.1rem;margin-bottom:.75rem}.sidebar-block-title{font-size:.68rem;font-weight:700;letter-spacing:.14em;color:var(--muted);margin-bottom:.75rem;text-transform:uppercase}.sidebar-search{display:flex;align-items:center;gap:.45rem;background:rgba(6,13,26,.6);border:1px solid rgba(103,232,249,.12);border-radius:8px;padding:.45rem .7rem;transition:border-color .2s}.sidebar-search:focus-within{border-color:rgba(34,211,238,.38)}.sidebar-search svg{width:13px;height:13px;color:var(--muted);flex-shrink:0}.sidebar-search input{background:0 0;border:none;outline:0;color:var(--text);font-size:.83rem;font-family:'Zen Kaku Gothic New',sans-serif;width:100%}.sidebar-search input::placeholder{color:var(--muted)}.sidebar-genres{display:flex;flex-wrap:wrap;gap:.35rem}.sg-chip{font-size:.72rem;font-weight:700;letter-spacing:.03em;padding:.22rem .65rem;border-radius:20px;cursor:pointer;opacity:.55;transition:opacity .18s,transform .15s;font-family:'Zen Kaku Gothic New',sans-serif;border:1px solid transparent}.sg-chip:hover{opacity:.85;transform:translateY(-1px)}.sg-chip.active{opacity:1;transform:none}.sidebar-years{display:flex;flex-wrap:wrap;gap:.35rem}.sy-chip{font-size:.75rem;font-weight:700;padding:.22rem .65rem;border-radius:8px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:var(--muted);cursor:pointer;font-family:'Zen Kaku Gothic New',sans-serif;transition:all .18s}.sy-chip:hover{color:var(--cyan);border-color:rgba(34,211,238,.3)}.sy-chip.active{background:rgba(34,211,238,.12);border-color:rgba(34,211,238,.4);color:var(--cyan)}.sidebar-status{display:flex;flex-direction:column;gap:.5rem}.sidebar-radio{display:flex;align-items:center;gap:.5rem;font-size:.82rem;color:var(--muted);cursor:pointer;transition:color .18s}.sidebar-radio:hover{color:var(--text)}.sidebar-radio input{accent-color:var(--cyan);cursor:pointer}.sidebar-clear{width:100%;padding:.55rem;background:rgba(248,113,113,.07);border:1px solid rgba(248,113,113,.2);border-radius:10px;color:#f87171;font-size:.78rem;font-weight:700;font-family:'Zen Kaku Gothic New',sans-serif;cursor:pointer;transition:all .18s}.sidebar-clear:hover{background:rgba(248,113,113,.15)}.nav-active{color:rgba(255,255,255,.92)!important;background:rgba(34,211,238,.1)!important}@media (max-width:900px){.anlist-layout{flex-direction:column;padding:80px 1.2rem 4rem}.anlist-sidebar{width:100%;position:static;margin-left:0;flex-direction:row;flex-wrap:wrap;gap:.6rem}.sidebar-block{flex:1;min-width:160px;margin-bottom:0}.anlist-sidebar .sidebar-clear{width:auto;flex:0 0 auto;align-self:flex-end}}@media (max-width:540px){.anime-grid{grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:1rem}.anlist-sidebar{flex-direction:column}.sidebar-block{min-width:unset}}.pagination-wrap{display:flex;flex-wrap:wrap;gap:.3rem}.pg-btn{min-width:34px;height:32px;padding:0 .5rem;background:rgba(13,26,46,.8);border:1px solid rgba(103,232,249,.15);border-radius:8px;color:var(--muted);font-size:.78rem;font-weight:700;cursor:pointer;font-family:'Zen Kaku Gothic New',sans-serif;transition:all .18s}.pg-btn:hover:not(:disabled){color:var(--cyan);border-color:rgba(34,211,238,.4)}.pg-btn.pg-active{background:rgba(34,211,238,.15);border-color:rgba(34,211,238,.5);color:var(--cyan)}.pg-btn.pg-disabled,.pg-btn:disabled{opacity:.35;cursor:default}.pg-ellipsis{color:var(--muted);font-size:.8rem;line-height:32px;padding:0 .2rem}
+/* ============================================================
+   ANLIST.CSS — Lista de animes com sidebar e cards renovados
+   ============================================================ */
+
+/* ── Layout geral ── */
+.anlist-layout {
+    position: relative; z-index: 5;
+    display: flex; gap: 0;
+    max-width: 1340px; margin: 0 auto;
+    padding: 88px 2rem 5rem;
+    min-height: 100vh;
+    align-items: flex-start;
+}
+
+/* ── Main (grid) ── */
+.anlist-main { flex: 1; min-width: 0; }
+
+.anlist-header-row {
+    display: flex; align-items: baseline; gap: 0.75rem;
+    margin-bottom: 2rem;
+}
+.anlist-heading {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: clamp(1.3rem, 3vw, 2rem);
+    background: linear-gradient(135deg, #e0f7fa, #22d3ee);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.anlist-count {
+    font-size: 0.78rem; color: var(--muted); font-weight: 400;
+}
+
+/* ── Grid de cards ── */
+.anime-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(168px, 1fr));
+    gap: 1.4rem;
+}
+
+/* ── Card ── */
+.anime-card {
+    cursor: pointer;
+    animation: cardPop 0.5s cubic-bezier(.22,1,.36,1) both;
+    transition: transform 0.3s cubic-bezier(.22,1,.36,1);
+}
+@keyframes cardPop {
+    from { opacity:0; transform: translateY(16px) scale(0.97); }
+    to   { opacity:1; transform: none; }
+}
+.anime-card:hover { transform: translateY(-6px); }
+
+.card-img-wrap {
+    position: relative; aspect-ratio: 2/3;
+    border-radius: 12px; overflow: hidden;
+    border: 1px solid rgba(34,211,238,0.15);
+    box-shadow: 0 6px 24px rgba(0,0,0,0.45);
+    transition: box-shadow 0.3s, border-color 0.3s;
+}
+.anime-card:hover .card-img-wrap {
+    box-shadow: 0 14px 40px rgba(0,0,0,0.65), 0 0 20px rgba(34,211,238,0.12);
+    border-color: rgba(34,211,238,0.38);
+}
+.card-img-wrap img {
+    width:100%; height:100%; object-fit:cover; display:block;
+    transition: transform 0.4s cubic-bezier(.22,1,.36,1);
+}
+.anime-card:hover .card-img-wrap img { transform: scale(1.06); }
+
+.card-shine {
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.07) 0%, transparent 55%);
+    pointer-events: none;
+}
+
+/* Rating badge — canto superior direito */
+.card-rating {
+    position: absolute; top: 0.5rem; right: 0.5rem;
+    font-size: 0.72rem; font-weight: 700;
+    color: #fbbf24;
+    background: rgba(6,13,26,0.82);
+    border: 1px solid rgba(251,191,36,0.3);
+    border-radius: 8px; padding: 0.15rem 0.45rem;
+    backdrop-filter: blur(4px);
+}
+
+/* Overlay play ao hover */
+.card-hover-play {
+    position: absolute; inset: 0;
+    background: rgba(6,13,26,0.5);
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0; transition: opacity 0.25s;
+}
+.card-hover-play svg {
+    width: 42px; height: 42px; color: #fff;
+    filter: drop-shadow(0 0 14px rgba(34,211,238,0.6));
+    transform: scale(0.85); transition: transform 0.25s;
+}
+.anime-card:hover .card-hover-play { opacity: 1; }
+.anime-card:hover .card-hover-play svg { transform: scale(1); }
+
+/* Info abaixo da capa */
+.card-info {
+    padding: 0.65rem 0.1rem 0;
+    display: flex; flex-direction: column; gap: 5px;
+}
+.card-title {
+    font-size: 0.88rem; font-weight: 700;
+    color: rgba(255,255,255,0.92);
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.card-genres { display: flex; flex-wrap: wrap; gap: 3px; }
+.card-genre-chip {
+    font-size: 0.64rem; font-weight: 700; letter-spacing: 0.03em;
+    padding: 0.12rem 0.45rem; border-radius: 20px;
+}
+
+/* ── Estado vazio ── */
+.anlist-empty {
+    display: flex; flex-direction: column; align-items: center;
+    gap: 0.6rem; padding: 4rem 0; color: var(--muted); text-align: center;
+}
+.anlist-empty .empty-icon { font-size: 2.5rem; }
+.anlist-empty p { font-size: 0.9rem; }
+
+/* ============================================================
+   SIDEBAR DIREITA
+   ============================================================ */
+.anlist-sidebar {
+    width: 220px; flex-shrink: 0;
+    margin-left: 2rem;
+    position: sticky; top: 76px;
+    display: flex; flex-direction: column; gap: 0;
+}
+
+.sidebar-block {
+    background: rgba(13,26,46,0.6);
+    border: 1px solid rgba(103,232,249,0.1);
+    border-radius: 14px; padding: 1rem 1.1rem;
+    margin-bottom: 0.75rem;
+}
+.sidebar-block-title {
+    font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em;
+    color: var(--muted); margin-bottom: 0.75rem; text-transform: uppercase;
+}
+
+/* Busca sidebar */
+.sidebar-search {
+    display: flex; align-items: center; gap: 0.45rem;
+    background: rgba(6,13,26,0.6);
+    border: 1px solid rgba(103,232,249,0.12);
+    border-radius: 8px; padding: 0.45rem 0.7rem;
+    transition: border-color 0.2s;
+}
+.sidebar-search:focus-within { border-color: rgba(34,211,238,0.38); }
+.sidebar-search svg { width: 13px; height: 13px; color: var(--muted); flex-shrink: 0; }
+.sidebar-search input {
+    background: none; border: none; outline: none;
+    color: var(--text); font-size: 0.83rem;
+    font-family: 'Zen Kaku Gothic New', sans-serif; width: 100%;
+}
+.sidebar-search input::placeholder { color: var(--muted); }
+
+/* Chips de gênero */
+.sidebar-genres { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+.sg-chip {
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.03em;
+    padding: 0.22rem 0.65rem; border-radius: 20px;
+    cursor: pointer; opacity: 0.55;
+    transition: opacity 0.18s, transform 0.15s;
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    border: 1px solid transparent;
+}
+.sg-chip:hover { opacity: 0.85; transform: translateY(-1px); }
+.sg-chip.active { opacity: 1; transform: none; }
+
+/* Chips de ano */
+.sidebar-years { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+.sy-chip {
+    font-size: 0.75rem; font-weight: 700;
+    padding: 0.22rem 0.65rem; border-radius: 8px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: var(--muted); cursor: pointer;
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    transition: all 0.18s;
+}
+.sy-chip:hover { color: var(--cyan); border-color: rgba(34,211,238,0.3); }
+.sy-chip.active {
+    background: rgba(34,211,238,0.12);
+    border-color: rgba(34,211,238,0.4); color: var(--cyan);
+}
+
+/* Radio status */
+.sidebar-status { display: flex; flex-direction: column; gap: 0.5rem; }
+.sidebar-radio {
+    display: flex; align-items: center; gap: 0.5rem;
+    font-size: 0.82rem; color: var(--muted); cursor: pointer;
+    transition: color 0.18s;
+}
+.sidebar-radio:hover { color: var(--text); }
+.sidebar-radio input { accent-color: var(--cyan); cursor: pointer; }
+
+/* Botão limpar */
+.sidebar-clear {
+    width: 100%; padding: 0.55rem;
+    background: rgba(248,113,113,0.07);
+    border: 1px solid rgba(248,113,113,0.2);
+    border-radius: 10px; color: #f87171;
+    font-size: 0.78rem; font-weight: 700;
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    cursor: pointer; transition: all 0.18s;
+}
+.sidebar-clear:hover { background: rgba(248,113,113,0.15); }
+
+/* ── Nav active ── */
+.nav-active { color: rgba(255,255,255,0.92) !important; background: rgba(34,211,238,0.1) !important; }
+
+/* ── Responsivo ── */
+@media (max-width: 900px) {
+    .anlist-layout { flex-direction: column; padding: 80px 1.2rem 4rem; }
+    .anlist-sidebar { width: 100%; position: static; margin-left: 0; flex-direction: row; flex-wrap: wrap; gap: 0.6rem; }
+    .sidebar-block { flex: 1; min-width: 160px; margin-bottom: 0; }
+    .anlist-sidebar .sidebar-clear { width: auto; flex: 0 0 auto; align-self: flex-end; }
+}
+@media (max-width: 540px) {
+    .anime-grid { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 1rem; }
+    .anlist-sidebar { flex-direction: column; }
+    .sidebar-block { min-width: unset; }
+}
+
+/* ── PAGINAÇÃO ── */
+.pagination-wrap {
+    display: flex; flex-wrap: wrap; gap: 0.3rem;
+}
+.pg-btn {
+    min-width: 34px; height: 32px; padding: 0 0.5rem;
+    background: rgba(13,26,46,0.8); border: 1px solid rgba(103,232,249,0.15);
+    border-radius: 8px; color: var(--muted); font-size: 0.78rem; font-weight: 700;
+    cursor: pointer; font-family: 'Zen Kaku Gothic New', sans-serif;
+    transition: all 0.18s;
+}
+.pg-btn:hover:not(:disabled) { color: var(--cyan); border-color: rgba(34,211,238,0.4); }
+.pg-btn.pg-active {
+    background: rgba(34,211,238,0.15); border-color: rgba(34,211,238,0.5);
+    color: var(--cyan);
+}
+.pg-btn.pg-disabled, .pg-btn:disabled { opacity: 0.35; cursor: default; }
+.pg-ellipsis { color: var(--muted); font-size: 0.8rem; line-height: 32px; padding: 0 0.2rem; }
