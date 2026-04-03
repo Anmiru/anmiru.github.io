@@ -1,12 +1,32 @@
 {
   "mizu_zokusei_no_mahoutsukai": {
     "id": "mizu_zokusei_no_mahoutsukai",
-    "cover": "img/mizu_zokusei_no_mahoutsukai.jpg",
-    "episodesFile": "video/Mizu Zokusei no Mahoutsukai/episodes.json"
+    "cover": "img/mizu_zokusei_no_mahoutsukai_cap.jpg",
+    "episodesFile": "video/Mizu Zokusei no Mahoutsukai/episodes.json",
+    "langFolder": "video/Mizu Zokusei no Mahoutsukai/lang/"
   },
   "ame_to_kimi_to": {
     "id": "ame_to_kimi_to",
     "cover": "img/ame_to_kimi_to.png",
-    "episodesFile": "video/Ame to Kimi to/episodes.json"
+    "episodesFile": "video/Ame to Kimi to/episodes.json",
+    "langFolder": "video/Ame to Kimi to/lang/"
+  },
+  "maid-san_wa_taberu_dake": {
+    "id": "maid-san_wa_taberu_dake",
+    "cover": "img/maid-san_wa_taberu_dake_cap.jpg",
+    "episodesFile": "video/Maid-san wa Taberu dake/episodes.json",
+    "langFolder": "video/Maid-san wa Taberu dake/lang/"
+  },
+  "mata_korosarete_shimatta_no_desu_ne_tantei-sama": {
+    "id": "mata_korosarete_shimatta_no_desu_ne_tantei-sama",
+    "cover": "img/mata_korosarete_shimatta_no_desu_ne_tantei-sama_cap.jpg",
+    "episodesFile": "video/Mata Korosarete Shimatta no desu ne, Tantei-sama/episodes.json",
+    "langFolder": "video/Mata Korosarete Shimatta no desu ne, Tantei-sama/lang/"
+  },
+  "haibara-kun_no_tsuyokute_seishun_new_game": {
+    "id": "haibara-kun_no_tsuyokute_seishun_new_game",
+    "cover": "img/haibara-kun_no_tsuyokute_seishun_new_game_cap.jpg",
+    "episodesFile": "video/Haibara-kun no Tsuyokute Seishun New Game/episodes.json",
+    "langFolder": "video/Haibara-kun no Tsuyokute Seishun New Game/lang/"
   }
 }

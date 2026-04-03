@@ -1,21 +1,52 @@
 {
   "animeIds": [
     "mizu_zokusei_no_mahoutsukai",
-    "ame_to_kimi_to"
+    "ame_to_kimi_to",
+    "maid-san_wa_taberu_dake",
+    "mata_korosarete_shimatta_no_desu_ne_tantei-sama",
+    "haibara-kun_no_tsuyokute_seishun_new_game"
   ],
   "spotlight": [
     {
-      "id": "mizu_zokusei_no_mahoutsukai",
+      "id": "maid-san_wa_taberu_dake",
       "active": true
     },
     {
-      "id": "ame_to_kimi_to",
+      "id": "mata_korosarete_shimatta_no_desu_ne_tantei-sama",
       "active": true
+    },
+    {
+      "id": "haibara-kun_no_tsuyokute_seishun_new_game",
+      "active": true
+    },
+    {
+      "id": "mizu_zokusei_no_mahoutsukai",
+      "active": false
+    },
+    {
+      "id": "ame_to_kimi_to",
+      "active": false
     }
   ],
   "spotBg": {
-    "mizu_zokusei_no_mahoutsukai": "https://archive.org/download/mizu_zokusei_no_mahoutsukai_bg/mizu_zokusei_no_mahoutsukai_bg.jpg",
-    "ame_to_kimi_to": "https://archive.org/download/background_ame_to_kimi_to/background_ame_to_kimi_to.jpg"
+    "mizu_zokusei_no_mahoutsukai": "img/mizu_zokusei_no_mahoutsukai_background.png",
+    "ame_to_kimi_to": "img/ame_to_kimi_to_background.jpg",
+    "maid-san_wa_taberu_dake": "img/maid-san-wa-taberu-dake_background.jpg",
+    "mata_korosarete_shimatta_no_desu_ne_tantei-sama": "img/mata_korosarete_shimatta_no_desu_ne_tantei-sama_background.jpg",
+    "haibara-kun_no_tsuyokute_seishun_new_game": "img/haibara-kun_no_tsuyokute_seishun_new_game_background.jpg"
   },
-  "videoBase": "video/"
+  "videoBase": "video/",
+  "homeFilters": {
+    "hiddenGenres": [
+      "romance",
+      "drama",
+      "comedia",
+      "terror",
+      "scifi",
+      "slice",
+      "gourmet"
+    ],
+    "hiddenStatus": [],
+    "hiddenSort": []
+  }
 }

@@ -1,5 +1,32 @@
 [
   {
+    "id": "1775230037098",
+    "date": "2026-04-03",
+    "type": "anime",
+    "title": "Novo anime adicionado!",
+    "body": "",
+    "link": "http://[::1]:8000/aninfo.html?anime=haibara-kun_no_tsuyokute_seishun_new_game",
+    "linkLabel": "Ver mais"
+  },
+  {
+    "id": "1775223995386",
+    "date": "2026-04-03",
+    "type": "anime",
+    "title": "Novo anime adicionado!",
+    "body": "",
+    "link": "http://[::1]:8000/aninfo.html?anime=mata_korosarete_shimatta_no_desu_ne_tantei-sama",
+    "linkLabel": "Ver mais"
+  },
+  {
+    "id": "1775223958988",
+    "date": "2026-04-03",
+    "type": "anime",
+    "title": "Novo anime adicionado!",
+    "body": "",
+    "link": "aninfo.html?anime=maid-san_wa_taberu_dake",
+    "linkLabel": "Ver mais"
+  },
+  {
     "id": "1775141015387",
     "date": "2026-04-02",
     "type": "news",

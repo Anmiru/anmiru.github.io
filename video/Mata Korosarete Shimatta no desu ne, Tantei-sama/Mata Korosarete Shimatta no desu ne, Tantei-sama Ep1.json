@@ -1,0 +1,30 @@
+{
+  "num": 1,
+  "title": "",
+  "folder": "video/Mata Korosarete Shimatta no desu ne, Tantei-sama/",
+  "video": "https://archive.org/download/mata-korosarete-shimatta-no-desu-ne-tantei-sama-ep-1/Mata%20Korosarete%20Shimatta%20no%20desu%20ne%2C%20Tantei%20sama%20Ep1.mp4",
+  "quality": "1080p",
+  "subtitle": "subs/Mata Korosarete Shimatta no desu ne, Tantei-sama/Mata Korosarete Shimatta no desu ne, Tantei-sama - Ep1_en.vtt",
+  "subtitle_lang": "English",
+  "subtitles": [
+    {
+      "src": "subs/Mata Korosarete Shimatta no desu ne, Tantei-sama/Mata Korosarete Shimatta no desu ne, Tantei-sama - Ep1_en.vtt",
+      "label": "English",
+      "lang": "en",
+      "default": false
+    },
+    {
+      "src": "subs/Mata Korosarete Shimatta no desu ne, Tantei-sama/Mata Korosarete Shimatta no desu ne, Tantei-sama - Ep1_pt.vtt",
+      "label": "Português brasileiro",
+      "lang": "pt-BR",
+      "default": true
+    },
+    {
+      "src": "subs/Mata Korosarete Shimatta no desu ne, Tantei-sama/Mata Korosarete Shimatta no desu ne, Tantei-sama - Ep1_es.vtt",
+      "label": "Español",
+      "lang": "es",
+      "default": false
+    }
+  ],
+  "videoSrc": "https://archive.org/download/mata-korosarete-shimatta-no-desu-ne-tantei-sama-ep-1/Mata%20Korosarete%20Shimatta%20no%20desu%20ne%2C%20Tantei%20sama%20Ep1.mp4"
+}

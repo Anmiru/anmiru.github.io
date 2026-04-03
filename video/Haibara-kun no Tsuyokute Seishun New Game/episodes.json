@@ -1,0 +1,46 @@
+{
+  "animeId": "haibara-kun_no_tsuyokute_seishun_new_game",
+  "title": "Haibara-kun no Tsuyokute Seishun New Game",
+  "seasons": [
+    {
+      "num": 1,
+      "name": "Temporada 1",
+      "episodes": [
+        {
+          "num": 1,
+          "title": "",
+          "thumb": "https://archive.org/download/mata-korosarete-shimatta-no-desu-ne-tantei-sama-ep-1/mata-korosarete-shimatta-no-desu-ne-tantei-sama-ep-1.thumbs/Haibara%20kun%20no%20Tsuyokute%20Seishun%20New%20Game%20Ep1_000600.jpg",
+          "videoFile": "https://archive.org/download/mata-korosarete-shimatta-no-desu-ne-tantei-sama-ep-1/Haibara%20kun%20no%20Tsuyokute%20Seishun%20New%20Game%20Ep1.mp4",
+          "jsonFile": "Haibara-kun no Tsuyokute Seishun New Game Ep1.json",
+          "qualities": [
+            {
+              "label": "1080p",
+              "src": "https://archive.org/download/mata-korosarete-shimatta-no-desu-ne-tantei-sama-ep-1/Haibara%20kun%20no%20Tsuyokute%20Seishun%20New%20Game%20Ep1.mp4",
+              "type": "video/mp4"
+            }
+          ],
+          "subtitles": [
+            {
+              "label": "Português brasileiro",
+              "lang": "pt-BR",
+              "src": "subs/Haibara-kun no Tsuyokute Seishun New Game/Haibara-kun no Tsuyokute Seishun New Game - Ep1_pt.vtt",
+              "default": true
+            },
+            {
+              "label": "English",
+              "lang": "en",
+              "src": "subs/Haibara-kun no Tsuyokute Seishun New Game/Haibara-kun no Tsuyokute Seishun New Game - Ep1_en.vtt",
+              "default": false
+            },
+            {
+              "label": "Español",
+              "lang": "es",
+              "src": "subs/Haibara-kun no Tsuyokute Seishun New Game/Haibara-kun no Tsuyokute Seishun New Game - Ep1_es.vtt",
+              "default": false
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
