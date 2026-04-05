@@ -87,6 +87,14 @@
       "rgb": "64,0,128",
       "pt": "Mistério",
       "en": "Mystery"
+    },
+    {
+      "id": "sobrenatural",
+      "css": "g-sobrenatural",
+      "color": "#ffffff",
+      "rgb": "255,255,255",
+      "pt": "Sobrenatural",
+      "en": "Supernatural"
     }
   ],
   "others": {

@@ -105,5 +105,9 @@
   "genre-Gourmet": "Gourmet",
   "status:complete": "Completo",
   "status:airing": "Em exibição",
-  "status:cancelled": "Cancelado"
+  "status:cancelled": "Cancelado",
+  "nav-filmes": "Filmes",
+  "filmes-title": "Filmes de Anime",
+  "empty-filmes": "Nenhum filme encontrado.",
+  "ver-todos-filmes": "Ver todos →"
 }

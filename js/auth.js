@@ -1,0 +1,1 @@
+const ADMIN_USER="FloralEmilyko",ADMIN_PASS="floral",SESSION_KEY="anmi_admin_ok";function isLogged(){return"1"===sessionStorage.getItem(SESSION_KEY)}

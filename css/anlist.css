@@ -39,14 +39,14 @@
 /* ── Card ── */
 .anime-card {
     cursor: pointer;
-    animation: cardPop 0.5s cubic-bezier(.22,1,.36,1) both;
-    transition: transform 0.3s cubic-bezier(.22,1,.36,1);
+    animation: cardFade 0.35s ease both;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
-@keyframes cardPop {
-    from { opacity:0; transform: translateY(16px) scale(0.97); }
+@keyframes cardFade {
+    from { opacity:0; transform: translateY(8px); }
     to   { opacity:1; transform: none; }
 }
-.anime-card:hover { transform: translateY(-6px); }
+.anime-card:hover { transform: translateY(-4px); }
 
 .card-img-wrap {
     position: relative; aspect-ratio: 2/3;

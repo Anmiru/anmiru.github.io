@@ -261,6 +261,16 @@ body.player-body {
 #anmi-sub-display.sub-visible.sub-above-bar { bottom: 4rem; }
 #anmi-sub-display.sub-visible.sub-bottom { bottom: 0.8rem; }
 
+/* Cue do topo (descrições, nomes de personagens, etc.) */
+#anmi-sub-top {
+    display: block; position: absolute; left: 50%; transform: translateX(-50%);
+    z-index: 20; pointer-events: none; text-align: center; width: 90%; max-width: 860px;
+    font-family: 'Zen Kaku Gothic New', sans-serif; line-height: 1.7;
+    border-radius: 4px; padding: 3px 12px; top: 1.2rem;
+    opacity: 0;
+}
+#anmi-sub-top.sub-top-visible { opacity: 1; }
+
 .vjs-subs-caps-button .vjs-menu .vjs-menu-content {
     background: rgba(6,13,26,0.96) !important;
     border: 1px solid rgba(103,232,249,0.22) !important;

@@ -4,24 +4,34 @@
     "ame_to_kimi_to",
     "maid-san_wa_taberu_dake",
     "mata_korosarete_shimatta_no_desu_ne_tantei-sama",
-    "haibara-kun_no_tsuyokute_seishun_new_game"
+    "haibara-kun_no_tsuyokute_seishun_new_game",
+    "jishou_akuyaku_reijou_na_konyakusha_no_ansatsu_kiroku."
   ],
   "spotlight": [
     {
       "id": "maid-san_wa_taberu_dake",
-      "active": true
+      "active": true,
+      "badgeId": "badge_1775321849513"
     },
     {
       "id": "mata_korosarete_shimatta_no_desu_ne_tantei-sama",
-      "active": true
+      "active": true,
+      "badgeId": "badge_1775321849513"
     },
     {
       "id": "haibara-kun_no_tsuyokute_seishun_new_game",
-      "active": true
+      "active": true,
+      "badgeId": "badge_1775321849513"
+    },
+    {
+      "id": "jishou_akuyaku_reijou_na_konyakusha_no_ansatsu_kiroku.",
+      "active": true,
+      "badgeId": "badge_1775321849513"
     },
     {
       "id": "mizu_zokusei_no_mahoutsukai",
-      "active": false
+      "active": false,
+      "badgeId": ""
     },
     {
       "id": "ame_to_kimi_to",
@@ -33,7 +43,8 @@
     "ame_to_kimi_to": "img/ame_to_kimi_to_background.jpg",
     "maid-san_wa_taberu_dake": "img/maid-san-wa-taberu-dake_background.jpg",
     "mata_korosarete_shimatta_no_desu_ne_tantei-sama": "img/mata_korosarete_shimatta_no_desu_ne_tantei-sama_background.jpg",
-    "haibara-kun_no_tsuyokute_seishun_new_game": "img/haibara-kun_no_tsuyokute_seishun_new_game_background.jpg"
+    "haibara-kun_no_tsuyokute_seishun_new_game": "img/haibara-kun_no_tsuyokute_seishun_new_game_background.jpg",
+    "jishou_akuyaku_reijou_na_konyakusha_no_ansatsu_kiroku.": "img/jishou_akuyaku_reijou_na_konyakusha_no_kansatsu_kiroku_background.png"
   },
   "videoBase": "video/",
   "homeFilters": {
@@ -43,10 +54,106 @@
       "comedia",
       "terror",
       "scifi",
-      "slice",
+      "sobrenatural",
+      "acao",
+      "misterio",
       "gourmet"
     ],
     "hiddenStatus": [],
     "hiddenSort": []
+  },
+  "spotBadge": {
+    "active": true,
+    "label": "EM DESTAQUE",
+    "labelEn": "FEATURED",
+    "color": "#22d3ee"
+  },
+  "badgeLib": [
+    {
+      "id": "badge_1",
+      "label": "EM DESTAQUE",
+      "labelEn": "FEATURED",
+      "color": "#22d3ee",
+      "isDefault": true
+    },
+    {
+      "id": "badge_1775312758389",
+      "label": "EM EXIBIÇÃO",
+      "labelEn": "CURRENTY SHOWING",
+      "color": "#ff8080",
+      "isDefault": false
+    },
+    {
+      "id": "badge_1775321849513",
+      "label": "EM LANÇAMENTO",
+      "labelEn": "UPCOMING",
+      "color": "#8080c0",
+      "isDefault": false
+    }
+  ],
+  "catalogCards": [
+    {
+      "id": "mizu_zokusei_no_mahoutsukai",
+      "active": true,
+      "badgeId": "status:complete"
+    },
+    {
+      "id": "ame_to_kimi_to",
+      "active": true,
+      "badgeId": "status:complete"
+    },
+    {
+      "id": "maid-san_wa_taberu_dake",
+      "active": true,
+      "badgeId": "badge_1775321849513"
+    },
+    {
+      "id": "mata_korosarete_shimatta_no_desu_ne_tantei-sama",
+      "active": true,
+      "badgeId": "badge_1775321849513"
+    },
+    {
+      "id": "haibara-kun_no_tsuyokute_seishun_new_game",
+      "active": true,
+      "badgeId": "badge_1775321849513"
+    },
+    {
+      "id": "jishou_akuyaku_reijou_na_konyakusha_no_ansatsu_kiroku.",
+      "active": true,
+      "badgeId": "badge_1775321849513"
+    },
+    {
+      "id": "suzume_no_tojimari",
+      "active": true,
+      "badgeId": "status:complete"
+    }
+  ],
+  "statusColors": {
+    "status:complete": "#34d399",
+    "status:airing": "#22d3ee",
+    "status:cancelled": "#f87171"
+  },
+  "catalogCarousel": {
+    "enabled": true,
+    "threshold": 5,
+    "speed": 10
+  },
+  "filmeIds": [
+    "suzume_no_tojimari"
+  ],
+  "filmeFilters": {
+    "hiddenGenres": [
+      "fantasia",
+      "acao",
+      "romance",
+      "drama",
+      "comedia",
+      "terror",
+      "scifi",
+      "slice",
+      "gourmet",
+      "misterio",
+      "aventura"
+    ]
   }
 }
