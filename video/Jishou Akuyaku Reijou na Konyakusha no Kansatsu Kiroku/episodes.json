@@ -23,19 +23,19 @@
             {
               "label": "Português brasileiro",
               "lang": "pt-BR",
-              "src": "subs\\Jishou Akuyaku Reijou na Konyakusha no Kansatsu Kiroku\\Jishou Akuyaku Reijou na Konyakusha no Kansatsu Kiroku - Ep1_pt.vtt",
+              "src": "subs/Jishou Akuyaku Reijou na Konyakusha no Kansatsu Kiroku/Jishou Akuyaku Reijou na Konyakusha no Kansatsu Kiroku - Ep1_pt.vtt",
               "default": true
             },
             {
               "label": "English",
               "lang": "en",
-              "src": "subs\\Jishou Akuyaku Reijou na Konyakusha no Kansatsu Kiroku\\Jishou Akuyaku Reijou na Konyakusha no Kansatsu Kiroku - Ep1_en.vtt",
+              "src": "subs/Jishou Akuyaku Reijou na Konyakusha no Kansatsu Kiroku/Jishou Akuyaku Reijou na Konyakusha no Kansatsu Kiroku - Ep1_en.vtt",
               "default": false
             },
             {
               "label": "Español",
               "lang": "es",
-              "src": "subs\\Jishou Akuyaku Reijou na Konyakusha no Kansatsu Kiroku\\Jishou Akuyaku Reijou na Konyakusha no Kansatsu Kiroku - Ep1_es.vtt",
+              "src": "subs/Jishou Akuyaku Reijou na Konyakusha no Kansatsu Kiroku/Jishou Akuyaku Reijou na Konyakusha no Kansatsu Kiroku - Ep1_es.vtt",
               "default": false
             }
           ]
