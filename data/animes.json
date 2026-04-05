@@ -29,8 +29,8 @@
     "episodesFile": "video/Haibara-kun no Tsuyokute Seishun New Game/episodes.json",
     "langFolder": "video/Haibara-kun no Tsuyokute Seishun New Game/lang/"
   },
-  "jishou_akuyaku_reijou_na_konyakusha_no_ansatsu_kiroku.": {
-    "id": "jishou_akuyaku_reijou_na_konyakusha_no_ansatsu_kiroku.",
+  "jishou_akuyaku_reijou_na_konyakusha_no_kansatsu_kiroku": {
+    "id": "jishou_akuyaku_reijou_na_konyakusha_no_kansatsu_kiroku",
     "cover": "img/jishou_akuyaku_reijou_na_konyakusha_no_kansatsu_kiroku_cover.jpg",
     "episodesFile": "video/Jishou Akuyaku Reijou na Konyakusha no Kansatsu Kiroku/episodes.json",
     "langFolder": "video/Jishou Akuyaku Reijou na Konyakusha no Kansatsu Kiroku/lang/"

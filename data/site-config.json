@@ -5,7 +5,7 @@
     "maid-san_wa_taberu_dake",
     "mata_korosarete_shimatta_no_desu_ne_tantei-sama",
     "haibara-kun_no_tsuyokute_seishun_new_game",
-    "jishou_akuyaku_reijou_na_konyakusha_no_ansatsu_kiroku."
+    "jishou_akuyaku_reijou_na_konyakusha_no_kansatsu_kiroku"
   ],
   "spotlight": [
     {
@@ -20,11 +20,6 @@
     },
     {
       "id": "haibara-kun_no_tsuyokute_seishun_new_game",
-      "active": true,
-      "badgeId": "badge_1775321849513"
-    },
-    {
-      "id": "jishou_akuyaku_reijou_na_konyakusha_no_ansatsu_kiroku.",
       "active": true,
       "badgeId": "badge_1775321849513"
     },
@@ -44,7 +39,7 @@
     "maid-san_wa_taberu_dake": "img/maid-san-wa-taberu-dake_background.jpg",
     "mata_korosarete_shimatta_no_desu_ne_tantei-sama": "img/mata_korosarete_shimatta_no_desu_ne_tantei-sama_background.jpg",
     "haibara-kun_no_tsuyokute_seishun_new_game": "img/haibara-kun_no_tsuyokute_seishun_new_game_background.jpg",
-    "jishou_akuyaku_reijou_na_konyakusha_no_ansatsu_kiroku.": "img/jishou_akuyaku_reijou_na_konyakusha_no_kansatsu_kiroku_background.png"
+    "jishou_akuyaku_reijou_na_konyakusha_no_kansatsu_kiroku": "img/jishou_akuyaku_reijou_na_konyakusha_no_kansatsu_kiroku_background.png"
   },
   "videoBase": "video/",
   "homeFilters": {
