@@ -1,0 +1,80 @@
+{
+  "animeId": "tongari_boushi_no_atelier",
+  "title": "Tongari Boushi no Atelier",
+  "seasons": [
+    {
+      "num": 1,
+      "name": "Temporada 1",
+      "episodes": [
+        {
+          "num": 1,
+          "title": "",
+          "thumb": "https://archive.org/download/tongari-boushi-no-atelier-ep-2/tongari-boushi-no-atelier-ep-2.thumbs/Tongari%20Boushi%20no%20Atelier%20Ep1_000120.jpg",
+          "videoFile": "https://archive.org/download/tongari-boushi-no-atelier-ep-2/Tongari%20Boushi%20no%20Atelier%20Ep1.mp4",
+          "jsonFile": "Tongari Boushi no Atelier Ep1.json",
+          "qualities": [
+            {
+              "label": "1080p",
+              "src": "https://archive.org/download/tongari-boushi-no-atelier-ep-2/Tongari%20Boushi%20no%20Atelier%20Ep1.mp4",
+              "type": "video/mp4"
+            }
+          ],
+          "subtitles": [
+            {
+              "label": "Português brasileiro",
+              "lang": "pt-BR",
+              "src": "subs/Tongari Boushi no Atelier/Tongari Boushi no Atelier - Ep1_pt.vtt",
+              "default": true
+            },
+            {
+              "label": "English",
+              "lang": "en",
+              "src": "subs/Tongari Boushi no Atelier/Tongari Boushi no Atelier - Ep1_en.vtt",
+              "default": false
+            },
+            {
+              "label": "Español",
+              "lang": "es",
+              "src": "subs/Tongari Boushi no Atelier/Tongari Boushi no Atelier - Ep1_es.vtt",
+              "default": false
+            }
+          ]
+        },
+        {
+          "num": 2,
+          "title": "",
+          "thumb": "https://archive.org/download/tongari-boushi-no-atelier-ep-2/tongari-boushi-no-atelier-ep-2.thumbs/Tongari%20Boushi%20no%20Atelier%20Ep2_000240.jpg",
+          "videoFile": "https://archive.org/download/tongari-boushi-no-atelier-ep-2/Tongari%20Boushi%20no%20Atelier%20Ep2.mp4",
+          "jsonFile": "Tongari Boushi no Atelier Ep2.json",
+          "qualities": [
+            {
+              "label": "1080p",
+              "src": "https://archive.org/download/tongari-boushi-no-atelier-ep-2/Tongari%20Boushi%20no%20Atelier%20Ep2.mp4",
+              "type": "video/mp4"
+            }
+          ],
+          "subtitles": [
+            {
+              "label": "Português brasileiro",
+              "lang": "pt-BR",
+              "src": "subs/Tongari Boushi no Atelier/Tongari Boushi no Atelier - Ep2_pt.vtt",
+              "default": true
+            },
+            {
+              "label": "English",
+              "lang": "en",
+              "src": "subs/Tongari Boushi no Atelier/Tongari Boushi no Atelier - Ep2_en.vtt",
+              "default": false
+            },
+            {
+              "label": "Español",
+              "lang": "es",
+              "src": "subs/Tongari Boushi no Atelier/Tongari Boushi no Atelier - Ep2_es.vtt",
+              "default": false
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -34,5 +34,30 @@
     "cover": "img/jishou_akuyaku_reijou_na_konyakusha_no_kansatsu_kiroku_cover.jpg",
     "episodesFile": "video/Jishou Akuyaku Reijou na Konyakusha no Kansatsu Kiroku/episodes.json",
     "langFolder": "video/Jishou Akuyaku Reijou na Konyakusha no Kansatsu Kiroku/lang/"
+  },
+  "reginetta_san_no_bouken": {
+    "id": "reginetta_san_no_bouken",
+    "cover": "img/reginetta_san_no_bouken_cover.jpg",
+    "episodesFile": "video/Reginetta-san no Bouken/episodes.json",
+    "langFolder": "video/Reginetta-san no Bouken/lang/",
+    "adult": true
+  },
+  "needy_girl_overdose": {
+    "id": "needy_girl_overdose",
+    "cover": "img/needy_girl_overdose_cover.jpg",
+    "episodesFile": "video/Needy Girl Overdose/episodes.json",
+    "langFolder": "video/Needy Girl Overdose/lang/"
+  },
+  "tongari_boushi_no_atelier": {
+    "id": "tongari_boushi_no_atelier",
+    "cover": "img/tongari_boushi_no_atelier_cover.jpg",
+    "episodesFile": "video/Tongari Boushi no Atelier/episodes.json",
+    "langFolder": "video/Tongari Boushi no Atelier/lang/"
+  },
+  "tsue_to_tsurugi_no_wistoria": {
+    "id": "tsue_to_tsurugi_no_wistoria",
+    "cover": "img/tsue_to_tsurugi_no_wistoria_cover.jpg",
+    "episodesFile": "video/Tsue to Tsurugi no Wistoria/episodes.json",
+    "langFolder": "video/Tsue to Tsurugi no Wistoria/lang/"
   }
 }

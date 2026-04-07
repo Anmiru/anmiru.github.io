@@ -1,8 +1,8 @@
 {
-  "homepage-title": "AnMi",
+  "homepage-title": "Welcome",
   "homepage-subtitle": "Your anime universe, subtitled with quality.",
   "homepage-btn": "See Animes",
-  "home-title": "AnMi",
+  "home-title": "Home",
   "nav-home": "Home",
   "nav-animes": "Animes",
   "nav-discord": "Discord",
@@ -21,7 +21,7 @@
   "footer-copy": "Made with ❤️ for the anime community",
   "footer-copyright": "© 2026 Anime Miru. All rights reserved.",
   "back-btn": "Back",
-  "anlist-title": "Anime List",
+  "anlist-title": "Animes",
   "label-episodes": "Episodes",
   "label-year": "Year",
   "label-synopsis": "Synopsis",
@@ -107,7 +107,9 @@
   "status:airing": "Airing",
   "status:cancelled": "Cancelled",
   "nav-filmes": "Movies",
-  "filmes-title": "Anime Movies",
+  "filmes-title": "Movies",
   "empty-filmes": "No movies found.",
-  "ver-todos-filmes": "See all →"
+  "ver-todos-filmes": "See all →",
+  "updates-title": "Updates",
+  "player-title": "Player"
 }

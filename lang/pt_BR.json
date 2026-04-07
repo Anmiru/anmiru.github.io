@@ -1,8 +1,8 @@
 {
-  "homepage-title": "AnMi",
+  "homepage-title": "Bem-vindo",
   "homepage-subtitle": "Seu universo de animes, legendados com qualidade.",
   "homepage-btn": "Ver Animes",
-  "home-title": "AnMi",
+  "home-title": "Início",
   "nav-home": "Início",
   "nav-animes": "Animes",
   "nav-discord": "Discord",
@@ -21,7 +21,7 @@
   "footer-copy": "Feito com ❤️ para a comunidade anime",
   "footer-copyright": "© 2026 Anime Miru. Todos os direitos reservados.",
   "back-btn": "Voltar",
-  "anlist-title": "Lista de Animes",
+  "anlist-title": "Animes",
   "label-episodes": "Episódios",
   "label-year": "Ano",
   "label-synopsis": "Sinopse",
@@ -107,7 +107,9 @@
   "status:airing": "Em exibição",
   "status:cancelled": "Cancelado",
   "nav-filmes": "Filmes",
-  "filmes-title": "Filmes de Anime",
+  "filmes-title": "Filmes",
   "empty-filmes": "Nenhum filme encontrado.",
-  "ver-todos-filmes": "Ver todos →"
+  "ver-todos-filmes": "Ver todos →",
+  "updates-title": "Novidades",
+  "player-title": "Player"
 }

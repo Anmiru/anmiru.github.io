@@ -5,9 +5,18 @@
     "maid-san_wa_taberu_dake",
     "mata_korosarete_shimatta_no_desu_ne_tantei-sama",
     "haibara-kun_no_tsuyokute_seishun_new_game",
-    "jishou_akuyaku_reijou_na_konyakusha_no_kansatsu_kiroku"
+    "jishou_akuyaku_reijou_na_konyakusha_no_kansatsu_kiroku",
+    "reginetta_san_no_bouken",
+    "needy_girl_overdose",
+    "tongari_boushi_no_atelier",
+    "tsue_to_tsurugi_no_wistoria"
   ],
   "spotlight": [
+    {
+      "id": "needy_girl_overdose",
+      "active": true,
+      "badgeId": "badge_1775321849513"
+    },
     {
       "id": "maid-san_wa_taberu_dake",
       "active": true,
@@ -24,12 +33,26 @@
       "badgeId": "badge_1775321849513"
     },
     {
+      "id": "tongari_boushi_no_atelier",
+      "active": true,
+      "badgeId": "badge_1775321849513"
+    },
+    {
       "id": "mizu_zokusei_no_mahoutsukai",
       "active": false,
       "badgeId": ""
     },
     {
       "id": "ame_to_kimi_to",
+      "active": false
+    },
+    {
+      "id": "jishou_akuyaku_reijou_na_konyakusha_no_kansatsu_kiroku",
+      "active": false,
+      "badgeId": "badge_1775321849513"
+    },
+    {
+      "id": "reginetta_san_no_bouken",
       "active": false
     }
   ],
@@ -39,7 +62,11 @@
     "maid-san_wa_taberu_dake": "img/maid-san-wa-taberu-dake_background.jpg",
     "mata_korosarete_shimatta_no_desu_ne_tantei-sama": "img/mata_korosarete_shimatta_no_desu_ne_tantei-sama_background.jpg",
     "haibara-kun_no_tsuyokute_seishun_new_game": "img/haibara-kun_no_tsuyokute_seishun_new_game_background.jpg",
-    "jishou_akuyaku_reijou_na_konyakusha_no_kansatsu_kiroku": "img/jishou_akuyaku_reijou_na_konyakusha_no_kansatsu_kiroku_background.png"
+    "jishou_akuyaku_reijou_na_konyakusha_no_kansatsu_kiroku": "img/jishou_akuyaku_reijou_na_konyakusha_no_kansatsu_kiroku_background.png",
+    "reginetta_san_no_bouken": "img/reginetta_san_no_bouken_background.jpg",
+    "needy_girl_overdose": "img/needy_girl_overdose_background.png",
+    "tongari_boushi_no_atelier": "img/tongari_boushi_no_atelier_background.jpg",
+    "tsue_to_tsurugi_no_wistoria": "img/tsue_to_tsurugi_no_wistoria_background.jpg"
   },
   "videoBase": "video/",
   "homeFilters": {
@@ -52,7 +79,10 @@
       "sobrenatural",
       "acao",
       "misterio",
-      "gourmet"
+      "gourmet",
+      "tentaculos",
+      "monstros",
+      "aventura"
     ],
     "hiddenStatus": [],
     "hiddenSort": []
@@ -113,14 +143,28 @@
       "badgeId": "badge_1775321849513"
     },
     {
-      "id": "jishou_akuyaku_reijou_na_konyakusha_no_ansatsu_kiroku.",
+      "id": "suzume_no_tojimari",
+      "active": true,
+      "badgeId": "status:complete"
+    },
+    {
+      "id": "jishou_akuyaku_reijou_na_konyakusha_no_kansatsu_kiroku",
       "active": true,
       "badgeId": "badge_1775321849513"
     },
     {
-      "id": "suzume_no_tojimari",
+      "id": "reginetta_san_no_bouken",
+      "active": true
+    },
+    {
+      "id": "needy_girl_overdose",
       "active": true,
-      "badgeId": "status:complete"
+      "badgeId": "badge_1775321849513"
+    },
+    {
+      "id": "tongari_boushi_no_atelier",
+      "active": true,
+      "badgeId": "badge_1775321849513"
     }
   ],
   "statusColors": {
@@ -129,7 +173,7 @@
     "status:cancelled": "#f87171"
   },
   "catalogCarousel": {
-    "enabled": true,
+    "enabled": false,
     "threshold": 5,
     "speed": 10
   },
@@ -139,7 +183,6 @@
   "filmeFilters": {
     "hiddenGenres": [
       "fantasia",
-      "acao",
       "romance",
       "drama",
       "comedia",
@@ -148,7 +191,9 @@
       "slice",
       "gourmet",
       "misterio",
-      "aventura"
+      "tentaculos",
+      "monstros",
+      "acao"
     ]
   }
 }

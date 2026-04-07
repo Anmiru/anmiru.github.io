@@ -1,6 +1,6 @@
 {
-  "animeId": "jishou_akuyaku_reijou_na_konyakusha_no_ansatsu_kiroku.",
-  "title": "Jishou Akuyaku Reijou na Konyakusha no Kansatsu Kiroku.",
+  "animeId": "jishou_akuyaku_reijou_na_konyakusha_no_kansatsu_kiroku",
+  "title": "Jishou Akuyaku Reijou na Konyakusha no Kansatsu Kiroku",
   "seasons": [
     {
       "num": 1,
@@ -9,9 +9,9 @@
         {
           "num": 1,
           "title": "",
-          "thumb": "https://archive.org/download/jishou-akuyaku-reijou-na-konyakusha-no-kansatsu-kiroku-ep-1/jishou-akuyaku-reijou-na-konyakusha-no-kansatsu-kiroku-ep-1.thumbs/Jishou%20Akuyaku%20Reijou%20na%20Konyakusha%20no%20Kansatsu%20Kiroku%20Ep1_000060.jpg",
+          "thumb": "",
           "videoFile": "https://archive.org/download/jishou-akuyaku-reijou-na-konyakusha-no-kansatsu-kiroku-ep-1/Jishou%20Akuyaku%20Reijou%20na%20Konyakusha%20no%20Kansatsu%20Kiroku%20Ep1.mp4",
-          "jsonFile": "Jishou Akuyaku Reijou na Konyakusha no Kansatsu Kiroku. Ep1.json",
+          "jsonFile": "Jishou Akuyaku Reijou na Konyakusha no Kansatsu Kiroku Ep1.json",
           "qualities": [
             {
               "label": "1080p",
@@ -21,22 +21,10 @@
           ],
           "subtitles": [
             {
-              "label": "Português brasileiro",
-              "lang": "pt-BR",
-              "src": "subs/Jishou Akuyaku Reijou na Konyakusha no Kansatsu Kiroku/Jishou Akuyaku Reijou na Konyakusha no Kansatsu Kiroku - Ep1_pt.vtt",
+              "label": "Brasil",
+              "lang": "brasi",
+              "src": "subs\\Jishou Akuyaku Reijou na Konyakusha no Kansatsu Kiroku\\Jishou Akuyaku Reijou na Konyakusha no Kansatsu Kiroku - Ep1_pt.vtt",
               "default": true
-            },
-            {
-              "label": "English",
-              "lang": "en",
-              "src": "subs/Jishou Akuyaku Reijou na Konyakusha no Kansatsu Kiroku/Jishou Akuyaku Reijou na Konyakusha no Kansatsu Kiroku - Ep1_en.vtt",
-              "default": false
-            },
-            {
-              "label": "Español",
-              "lang": "es",
-              "src": "subs/Jishou Akuyaku Reijou na Konyakusha no Kansatsu Kiroku/Jishou Akuyaku Reijou na Konyakusha no Kansatsu Kiroku - Ep1_es.vtt",
-              "default": false
             }
           ]
         }

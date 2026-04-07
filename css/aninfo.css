@@ -297,3 +297,67 @@ body.aninfo-body {
     opacity: 0.8; transition: opacity 0.2s;
 }
 .synopsis-read-more:hover { opacity: 1; text-decoration: underline; }
+
+/* ── Comentários na página de info (igual ao player) ── */
+#anmiCommentsContainer {
+    position: relative; z-index: 5;
+    display: flex; justify-content: center;
+    padding: 0 2.5rem 4rem;
+}
+#anmiCommentsContainer .anmi-comments-section {
+    width: 100%; max-width: 960px;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(103,232,249,0.1);
+    border-radius: 14px;
+    padding: 1.75rem 2rem 2rem;
+}
+#anmiCommentsContainer .anmi-comments-title {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 1rem;
+    background: linear-gradient(135deg, #e0f7fa, #22d3ee);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: 0.04em;
+    margin-bottom: 1.5rem;
+    display: flex; align-items: center; gap: 0.5rem;
+}
+#anmiCommentsContainer .anmi-comment-textarea {
+    background: rgba(255,255,255,0.03);
+    font-size: 0.95rem;
+    min-height: 90px;
+}
+#anmiCommentsContainer .anmi-comment-item {
+    border-bottom-color: rgba(103,232,249,0.06);
+    padding: 1rem 0;
+}
+#anmiCommentsContainer .anmi-comment-top {
+    margin-bottom: 0.5rem;
+    gap: 0.75rem;
+}
+#anmiCommentsContainer .anmi-comment-avatar {
+    width: 40px; height: 40px;
+    font-size: 1rem;
+}
+#anmiCommentsContainer .anmi-comment-avatar img {
+    width: 40px; height: 40px;
+}
+#anmiCommentsContainer .anmi-comment-user {
+    font-size: 0.95rem;
+}
+#anmiCommentsContainer .anmi-comment-time {
+    font-size: 0.8rem;
+}
+#anmiCommentsContainer .anmi-comment-text {
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: rgba(255,255,255,0.82);
+    padding-left: 52px;
+}
+#anmiCommentsContainer .anmi-comment-login-prompt {
+    padding: 1.25rem 1.5rem;
+    font-size: 0.92rem;
+}
+#anmiCommentsContainer .anmi-no-comments {
+    font-size: 0.92rem;
+    padding: 2rem 0;
+}

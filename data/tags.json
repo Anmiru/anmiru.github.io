@@ -95,6 +95,30 @@
       "rgb": "255,255,255",
       "pt": "Sobrenatural",
       "en": "Supernatural"
+    },
+    {
+      "id": "tentaculos",
+      "css": "g-tentaculos",
+      "color": "#e10071",
+      "rgb": "225,0,113",
+      "pt": "Tentáculos",
+      "en": "Tentacles"
+    },
+    {
+      "id": "monstros",
+      "css": "g-monstros",
+      "color": "#4a4a4a",
+      "rgb": "74,74,74",
+      "pt": "Monstros",
+      "en": "Monsters"
+    },
+    {
+      "id": "suspense",
+      "css": "g-suspense",
+      "color": "#008080",
+      "rgb": "0,128,128",
+      "pt": "Suspense",
+      "en": "Suspense"
     }
   ],
   "others": {

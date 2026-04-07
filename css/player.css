@@ -252,24 +252,15 @@ body.player-body {
 
 .video-js .vjs-text-track-display { display: none !important; }
 #anmi-sub-display {
-    display: block; position: absolute; left: 50%; transform: translateX(-50%);
-    z-index: 20; pointer-events: none; text-align: center; width: 90%; max-width: 860px;
-    font-family: 'Zen Kaku Gothic New', sans-serif; line-height: 1.7;
-    border-radius: 4px; padding: 3px 12px; opacity: 0; bottom: 4rem; transition: none;
+    position: absolute; inset: 0;
+    z-index: 20; pointer-events: none;
+    opacity: 0;
+    overflow: hidden;
 }
 #anmi-sub-display.sub-visible { opacity: 1; }
-#anmi-sub-display.sub-visible.sub-above-bar { bottom: 4rem; }
-#anmi-sub-display.sub-visible.sub-bottom { bottom: 0.8rem; }
 
-/* Cue do topo (descrições, nomes de personagens, etc.) */
-#anmi-sub-top {
-    display: block; position: absolute; left: 50%; transform: translateX(-50%);
-    z-index: 20; pointer-events: none; text-align: center; width: 90%; max-width: 860px;
-    font-family: 'Zen Kaku Gothic New', sans-serif; line-height: 1.7;
-    border-radius: 4px; padding: 3px 12px; top: 1.2rem;
-    opacity: 0;
-}
-#anmi-sub-top.sub-top-visible { opacity: 1; }
+/* Cue do topo — não é mais necessário, mantido por compatibilidade */
+#anmi-sub-top { display: none; }
 
 .vjs-subs-caps-button .vjs-menu .vjs-menu-content {
     background: rgba(6,13,26,0.96) !important;
@@ -337,7 +328,8 @@ body.player-body {
     border: 1px solid rgba(103,232,249,0.1);
     border-radius: 14px;
     display: flex; flex-direction: column; overflow: hidden;
-    max-height: calc(100vh - 100px); position: sticky; top: 80px; align-self: start;
+    height: calc(100vh - 120px);
+    position: sticky; top: 80px; align-self: start;
 }
 .panel-header {
     display: flex; align-items: center; gap: 0.75rem;
@@ -358,6 +350,7 @@ body.player-body {
 .panel-list {
     overflow-y: auto; flex: 1; scrollbar-width: thin;
     scrollbar-color: rgba(103,232,249,0.25) transparent;
+    /* Scroll ativo — itens além da altura visível ficam acessíveis via scroll */
 }
 .panel-list::-webkit-scrollbar { width: 4px; }
 .panel-list::-webkit-scrollbar-thumb { background: rgba(103,232,249,0.25); border-radius: 4px; }
@@ -394,4 +387,66 @@ body.player-body {
     .player-header { padding: 0.9rem 1rem; }
     .episode-info-bar { flex-direction: column; align-items: flex-start; gap: 0.6rem; }
     .ep-nav-btns { width: 100%; justify-content: flex-end; }
+}
+
+/* ── Comentários no player ─────────────────────── */
+#anmiPlayerComments {
+    position: relative; z-index: 5;
+    max-width: 1280px; margin: 0 auto;
+    padding: 0 1.5rem 4rem;
+}
+#anmiPlayerComments .anmi-comments-section {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(103,232,249,0.1);
+    border-radius: 14px;
+    padding: 1.75rem 2rem 2rem;
+}
+#anmiPlayerComments .anmi-comments-title {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 1rem;
+    background: linear-gradient(135deg, #e0f7fa, #22d3ee);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: 0.04em;
+    margin-bottom: 1.5rem;
+    display: flex; align-items: center; gap: 0.5rem;
+}
+#anmiPlayerComments .anmi-comment-textarea {
+    background: rgba(255,255,255,0.03);
+    font-size: 0.95rem;
+    min-height: 90px;
+}
+#anmiPlayerComments .anmi-comment-item {
+    border-bottom-color: rgba(103,232,249,0.06);
+    padding: 1rem 0;
+}
+#anmiPlayerComments .anmi-comment-top {
+    margin-bottom: 0.5rem;
+    gap: 0.75rem;
+}
+#anmiPlayerComments .anmi-comment-avatar {
+    width: 32px; height: 32px;
+    font-size: 0.82rem;
+}
+#anmiPlayerComments .anmi-comment-avatar img {
+    width: 32px; height: 32px;
+}
+#anmiPlayerComments .anmi-comment-user {
+    font-size: 0.95rem;
+}
+#anmiPlayerComments .anmi-comment-time {
+    font-size: 0.8rem;
+}
+#anmiPlayerComments .anmi-comment-text {
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: rgba(255,255,255,0.82);
+}
+#anmiPlayerComments .anmi-comment-login-prompt {
+    padding: 1.25rem 1.5rem;
+    font-size: 0.92rem;
+}
+#anmiPlayerComments .anmi-no-comments {
+    font-size: 0.92rem;
+    padding: 2rem 0;
 }
