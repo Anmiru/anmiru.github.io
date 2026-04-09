@@ -1,0 +1,99 @@
+{
+  "animeIds": [
+    "tongari_boushi_no_atelier"
+  ],
+  "spotlight": [
+    {
+      "id": "tongari_boushi_no_atelier",
+      "active": true,
+      "badgeId": "badge_1775321849513"
+    }
+  ],
+  "spotBg": {
+    "tongari_boushi_no_atelier": "/img/tongari_boushi_no_atelier_background.jpg"
+  },
+  "videoBase": "video/",
+  "homeFilters": {
+    "hiddenGenres": [
+      "romance",
+      "drama",
+      "comedia",
+      "terror",
+      "scifi",
+      "sobrenatural",
+      "acao",
+      "misterio",
+      "gourmet",
+      "tentaculos",
+      "monstros",
+      "aventura"
+    ],
+    "hiddenStatus": [],
+    "hiddenSort": []
+  },
+  "spotBadge": {
+    "active": true,
+    "label": "EM DESTAQUE",
+    "labelEn": "FEATURED",
+    "color": "#22d3ee"
+  },
+  "badgeLib": [
+    {
+      "id": "badge_1",
+      "label": "EM DESTAQUE",
+      "labelEn": "FEATURED",
+      "color": "#22d3ee",
+      "isDefault": true
+    },
+    {
+      "id": "badge_1775312758389",
+      "label": "EM EXIBIÇÃO",
+      "labelEn": "CURRENTY SHOWING",
+      "color": "#ff8080",
+      "isDefault": false
+    },
+    {
+      "id": "badge_1775321849513",
+      "label": "EM LANÇAMENTO",
+      "labelEn": "UPCOMING",
+      "color": "#8080c0",
+      "isDefault": false
+    },
+    {
+      "id": "badge_1775591137834",
+      "label": "FILME",
+      "labelEn": "MOVIE",
+      "color": "#ff8000",
+      "isDefault": false
+    }
+  ],
+  "catalogCards": [
+    {
+      "id": "tongari_boushi_no_atelier",
+      "active": true,
+      "badgeId": "badge_1775321849513"
+    }
+  ],
+  "statusColors": {
+    "status:complete": "#34d399",
+    "status:airing": "#22d3ee",
+    "status:cancelled": "#f87171"
+  },
+  "filmeIds": [],
+  "filmeFilters": {
+    "hiddenGenres": [
+      "fantasia",
+      "romance",
+      "drama",
+      "comedia",
+      "terror",
+      "scifi",
+      "slice",
+      "gourmet",
+      "misterio",
+      "tentaculos",
+      "monstros",
+      "acao"
+    ]
+  }
+}

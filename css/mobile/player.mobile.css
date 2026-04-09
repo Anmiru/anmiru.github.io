@@ -1,0 +1,248 @@
+/* ============================================================
+   PLAYER.MOBILE.CSS — Estilos exclusivos para Android / telas pequenas
+   Inclua APÓS player.css apenas em dispositivos móveis:
+   <link rel="stylesheet" href="css/mobile/player.mobile.css" media="(max-width: 900px)">
+   ============================================================ */
+
+
+/* ============================================================
+   HEADER DO PLAYER — compacto
+   ============================================================ */
+@media (max-width: 900px) {
+    .player-header {
+        padding: 0.8rem 1rem;
+        gap: 0.75rem;
+    }
+
+    .back-btn {
+        font-size: 0.8rem;
+        padding: 0.35rem 0.75rem;
+        max-width: 140px;
+    }
+
+    .header-anime-title { font-size: clamp(0.7rem, 3vw, 0.95rem); }
+    .header-ep-label    { font-size: 0.68rem; }
+    .header-deco        { display: none; }
+}
+
+@media (max-width: 480px) {
+    .player-header { padding: 0.7rem 0.85rem; }
+    .back-btn { max-width: 110px; font-size: 0.75rem; }
+}
+
+
+/* ============================================================
+   LAYOUT PRINCIPAL — grade única coluna
+   ============================================================ */
+@media (max-width: 900px) {
+    .player-main {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        gap: 0.75rem;
+        padding: 0.75rem 0.75rem 3rem;
+    }
+
+    /* Player ocupa coluna 1 */
+    .player-wrapper { grid-column: 1; grid-row: 1; }
+
+    /* Barra de info do episódio */
+    .episode-info-bar { grid-column: 1; grid-row: 2; }
+
+    /* Painel de episódios abaixo do player */
+    .player-episodes-panel {
+        grid-column: 1;
+        grid-row: 3;
+        max-height: 300px;
+        position: static;
+        height: auto;
+    }
+}
+
+@media (max-width: 520px) {
+    .player-main { padding: 0 0 2.5rem; }
+
+    /* Player sem border-radius nas bordas laterais */
+    .player-wrapper {
+        border-radius: 0;
+        box-shadow: none;
+    }
+    .player-wrapper::after { border-radius: 0; }
+}
+
+
+/* ============================================================
+   VÍDEO — barra de controles mobile-friendly
+   ============================================================ */
+@media (max-width: 768px) {
+    /* Controles maiores para touch */
+    .video-js .vjs-control-bar {
+        height: 3.2rem !important;
+        padding: 0 0.4rem !important;
+    }
+
+    .video-js .vjs-play-control        { width: 2.8rem !important; }
+    .video-js .vjs-skip-backward,
+    .video-js .vjs-skip-forward        { width: 2.2rem !important; }
+    .video-js .vjs-fullscreen-control,
+    .vjs-settings-button               { width: 2.4rem !important; }
+
+    .video-js .vjs-control-bar .vjs-button .vjs-icon-placeholder::before {
+        font-size: 1.2rem !important;
+    }
+
+    /* Botão de play grande — mais acessível */
+    .video-js .vjs-big-play-button {
+        width: 60px !important;
+        height: 60px !important;
+        line-height: 60px !important;
+    }
+    .video-js .vjs-big-play-button .vjs-icon-placeholder::before {
+        font-size: 1.6rem !important;
+    }
+
+    /* Volume panel — oculto no mobile (controle nativo do dispositivo) */
+    .video-js .vjs-volume-panel { display: none !important; }
+
+    /* Barra de progresso mais espessa para toque */
+    .video-js .vjs-progress-holder { height: 5px !important; }
+    .video-js .vjs-progress-control:hover .vjs-progress-holder { height: 8px !important; }
+
+    /* Menus de qualidade e legenda */
+    .vjs-quality-menu-button .vjs-menu .vjs-menu-content,
+    .vjs-subs-caps-button .vjs-menu .vjs-menu-content {
+        min-width: 110px;
+        border-radius: 8px !important;
+    }
+
+    .vjs-quality-menu-button .vjs-menu-item,
+    .vjs-subs-caps-button .vjs-menu-item {
+        font-size: 0.88rem !important;
+        padding: 0.65rem 1rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Esconde texto de tempo no controle para economizar espaço */
+    .vjs-time-display-custom { display: none !important; }
+
+    .video-js .vjs-control-bar { padding: 0 0.25rem !important; }
+}
+
+
+/* ============================================================
+   BARRA DE INFO DO EPISÓDIO
+   ============================================================ */
+@media (max-width: 900px) {
+    .episode-info-bar {
+        padding: 0.5rem 0.75rem;
+        gap: 0.6rem;
+    }
+
+    .ep-number-label { font-size: 0.82rem; padding: 0.22rem 0.6rem; }
+    .ep-name-label   { font-size: 0.82rem; }
+}
+
+@media (max-width: 520px) {
+    .episode-info-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+        padding: 0.5rem 0.85rem;
+    }
+
+    .ep-meta { overflow: visible; }
+
+    .ep-nav-btns {
+        width: 100%;
+        justify-content: flex-end;
+    }
+
+    .ep-nav-btn {
+        font-size: 0.78rem;
+        padding: 0.35rem 0.75rem;
+        min-height: 36px;
+    }
+}
+
+
+/* ============================================================
+   PAINEL DE EPISÓDIOS (lista lateral → abaixo no mobile)
+   ============================================================ */
+@media (max-width: 900px) {
+    .player-episodes-panel { max-height: 280px; }
+
+    .panel-header { padding: 0.75rem 1rem 0.6rem; }
+    .panel-title  { font-size: 0.82rem; }
+
+    .panel-ep-item { padding: 0.6rem 1rem; gap: 0.6rem; }
+    .panel-ep-num  { width: 26px; height: 26px; font-size: 0.74rem; }
+    .panel-ep-ep   { font-size: 0.78rem; }
+    .panel-ep-name { font-size: 0.68rem; }
+}
+
+@media (max-width: 520px) {
+    .player-episodes-panel { max-height: 240px; }
+}
+
+
+/* ============================================================
+   COMENTÁRIOS NO PLAYER
+   ============================================================ */
+@media (max-width: 900px) {
+    #anmiPlayerComments {
+        padding: 0 0.75rem 3rem;
+    }
+
+    #anmiPlayerComments .anmi-comments-section {
+        padding: 1.2rem 1rem 1.5rem;
+        border-radius: 12px;
+    }
+
+    #anmiPlayerComments .anmi-comments-title {
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+    }
+
+    #anmiPlayerComments .anmi-comment-text {
+        font-size: 0.88rem;
+    }
+
+    #anmiPlayerComments .anmi-comment-avatar,
+    #anmiPlayerComments .anmi-comment-avatar img {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+@media (max-width: 520px) {
+    #anmiPlayerComments { padding: 0 0 2.5rem; }
+
+    #anmiPlayerComments .anmi-comments-section {
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+        padding: 1rem 0.85rem 1.2rem;
+    }
+}
+
+
+/* ============================================================
+   GLOBAIS — toque e rolagem
+   ============================================================ */
+@media (max-width: 900px) {
+    html { -webkit-overflow-scrolling: touch; scroll-behavior: smooth; }
+
+    /* Remove delay de tap */
+    a, button, [role="button"],
+    .panel-ep-item, .ep-nav-btn, .back-btn {
+        touch-action: manipulation;
+    }
+
+    /* Área mínima de toque */
+    .ep-nav-btn, .back-btn, .panel-ep-item {
+        min-height: 44px;
+    }
+
+    /* Scroll suave no painel de episódios */
+    .panel-list { -webkit-overflow-scrolling: touch; }
+}

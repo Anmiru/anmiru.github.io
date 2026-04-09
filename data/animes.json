@@ -1,0 +1,8 @@
+{
+  "tongari_boushi_no_atelier": {
+    "id": "tongari_boushi_no_atelier",
+    "cover": "/img/tongari_boushi_no_atelier_cover.jpg",
+    "episodesFile": "/video/Tongari Boushi no Atelier/episodes.json",
+    "langFolder": "/video/Tongari Boushi no Atelier/lang/"
+  }
+}
