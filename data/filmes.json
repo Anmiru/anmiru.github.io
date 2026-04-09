@@ -1,9 +1,0 @@
-{
-  "suzume_no_tojimari": {
-    "id": "suzume_no_tojimari",
-    "cover": "img/suzume_no_tojimari_cover.jpg",
-    "bg": "img/suzume_no_tojimari_background.jpg",
-    "langFolder": "movie/Suzume no Tojimari/lang/",
-    "videoFile": "movie/Suzume no Tojimari/suzume_no_tojimari.mp4"
-  }
-}
