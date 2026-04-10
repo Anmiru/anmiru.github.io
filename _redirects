@@ -3,3 +3,9 @@
 
 # URLs limpas para filmes
 /aninfo/:anime/filme   /aninfo/index.html?anime=:anime&tipo=filmetipo=movie   200
+
+# URLs limpas para o player (sem temporada)
+/player/:anime/episode/:ep   /player/index.html?anime=:anime&ep=:ep   200
+
+# URLs limpas para o player (com temporada)
+/player/:anime/season/:season/episode/:ep   /player/index.html?anime=:anime&ep=:ep&season=:season   200
