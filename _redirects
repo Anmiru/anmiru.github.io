@@ -1,11 +1,11 @@
-# URLs limpas para páginas de anime
+# Clean URLs for anime pages
 /aninfo/:anime   /aninfo/index.html?anime=:anime   200
 
-# URLs limpas para filmes
+# Clean URLs for movies
 /aninfo/:anime/filme   /aninfo/index.html?anime=:anime&tipo=filmetipo=movie   200
 
-# URLs limpas para o player (sem temporada)
+# Clean URLs for the player (no season)
 /player/:anime/episode/:ep   /player/index.html?anime=:anime&ep=:ep   200
 
-# URLs limpas para o player (com temporada)
+# Clean URLs for the player (with season)
 /player/:anime/season/:season/episode/:ep   /player/index.html?anime=:anime&ep=:ep&season=:season   200
