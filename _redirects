@@ -1,0 +1,5 @@
+# URLs limpas para páginas de anime
+/aninfo/:anime   /aninfo/index.html?anime=:anime   200
+
+# URLs limpas para filmes
+/aninfo/:anime/filme   /aninfo/index.html?anime=:anime&tipo=filmetipo=movie   200

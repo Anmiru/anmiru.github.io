@@ -367,9 +367,18 @@ body.home-page {
     border-top: 1px solid rgba(103,232,249,0.1);
     background: linear-gradient(180deg, rgba(6,13,26,0) 0%, rgba(9,20,38,0.6) 100%);
 }
+.about-cols {
+    max-width: 960px; margin: 0 auto;
+    display: flex; flex-direction: row; gap: 0; align-items: flex-start;
+}
 .about-inner {
-    max-width: 640px; margin: 0 auto; text-align: center;
+    flex: 1; text-align: center;
     display: flex; flex-direction: column; gap: 1.5rem; align-items: center;
+    padding: 0 2rem;
+}
+.about-divider {
+    width: 1px; align-self: stretch; flex-shrink: 0;
+    background: linear-gradient(180deg, transparent, rgba(103,232,249,0.2), transparent);
 }
 .about-title {
     font-family: 'Cinzel Decorative', cursive;
@@ -410,4 +419,7 @@ body.home-page {
     .hero-kanji { display: none; }
     .featured { padding: 3rem 1.2rem 3rem; }
     .about { padding: 3rem 1.2rem 4rem; }
+    .about-cols { flex-direction: column; gap: 3rem; }
+    .about-divider { width: auto; height: 1px; align-self: stretch; }
+    .about-inner { padding: 0; }
 }
